@@ -1,3 +1,7 @@
-.idea/
+/.idea
 dojoExample.iml
-target/
+/target
+/.classpath
+/.project
+/.settings
+/.idea
