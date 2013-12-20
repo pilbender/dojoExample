@@ -20,13 +20,12 @@
 			<value>
 				html=text/html
 				json=application/json
-				xml=application/xml
 			</value>
 		</property>
 	</bean>
 	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
 		<property name="order" value="1"/>
-		<property name="contentNegotiationManager" value="contentNegotiationManager"/>
+		<property name="contentNegotiationManager" ref="contentNegotiationManager"/>
 		<property name="viewResolvers">
 			<list>
 				<ref bean="jspViewResolver" />
