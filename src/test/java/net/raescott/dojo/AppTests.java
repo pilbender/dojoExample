@@ -22,8 +22,7 @@ public class AppTests {
     private MockMvc mockMvc;
 
     @SuppressWarnings("SpringJavaAutowiringInspection")
-    @Autowired
-    protected WebApplicationContext wac;
+    @Autowired protected WebApplicationContext wac;
 
     @Before
     public void setup() {
