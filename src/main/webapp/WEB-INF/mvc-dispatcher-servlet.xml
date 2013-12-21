@@ -13,9 +13,11 @@
   then JSP is assumed.  If there is a .json on the end of the URL, then JSON
   messages are returned. -->
 
+	<mvc:annotation-driven content-negotiation-manager="contentNegotiationManager"/>
 	<bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+		<!-- Turn off working out content type based on URL file extension, should fall back to looking at the Accept headers -->
 		<property name="favorPathExtension" value="false" />
-		<property name="favorParameter" value="true" />
+		<property name="favorParameter" value="false" />
 		<property name="mediaTypes" >
 			<value>
 				html=text/html
