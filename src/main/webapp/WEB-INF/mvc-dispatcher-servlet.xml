@@ -8,6 +8,9 @@
 
     <context:component-scan base-package="net.raescott.dojo"/>
 
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+
 	<!-- Top level view resolver for different types of content.  It uses
   headers and extensions on the URL.  For example, if the URL has no special ending,
   then JSP is assumed.  If there is a .json on the end of the URL, then JSON
