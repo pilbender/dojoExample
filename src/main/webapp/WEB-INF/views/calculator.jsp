@@ -28,13 +28,13 @@
             <%--src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js.uncompressed.js"></script>--%>
     <script>
         // Require the module we just created
-        require(["demo/myModule"], function(myModule){
+        require(["demo/calculator"], function(calculator){
             // Use our module to change the text in the greeting
-            myModule.setText("greeting", "Hello Dojo!");
+            calculator.setText("greeting", "Hello Dojo!");
 
             // After a few seconds, restore the text to its original state
             setTimeout(function(){
-                myModule.restoreText("greeting");
+                calculator.restoreText("greeting");
             }, 3000);
         });
 
