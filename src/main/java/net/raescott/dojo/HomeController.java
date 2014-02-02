@@ -24,4 +24,10 @@ public class HomeController {
 		response.put("status", "true");
 		return response;
 	}
+
+	@RequestMapping(value = "calculator", method = RequestMethod.GET)
+	public String calculatorPage(ModelMap model) {
+		model.addAttribute("message", "Page content");
+		return "calculator";
+	}
 }
