@@ -24,8 +24,7 @@ define([
 		},
 		restoreText: function(id){
 			var node = dom.byId(id);
-			node.innerHTML = oldText[id];
-			delete oldText[id];
+			node.innerHTML = dom.byId("num1").value * 2;
 		}
 	};
 });
