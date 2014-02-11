@@ -22,9 +22,10 @@ define([
 			oldText[id] = node.innerHTML;
 			node.innerHTML = text;
 		},
-		restoreText: function(id){
-			var node = dom.byId(id);
-			node.innerHTML = node.value;
+		restoreText: function(inputId, outputId){
+			var inputNode = dom.byId(inputId);
+            var outputNode = dom.byId(outputId)
+			outputNode.innerHTML = inputNode.value * 2;
 		}
 	};
 });

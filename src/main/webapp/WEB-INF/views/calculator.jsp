@@ -29,7 +29,7 @@
 
             // After a few seconds, restore the text to its original state
             setTimeout(function(){
-                calculator.restoreText("num1");
+                calculator.restoreText("num1", "out1");
             }, 3000);
         });
 
