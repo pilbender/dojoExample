@@ -4,8 +4,10 @@
 define([
 	// The dojo/dom module is required by this module, so it goes
 	// in this list of dependencies.
-	"dojo/dom"
-], function(dom){
+	"dojo/dom",
+	"dojo/on", // Events
+	"dojo/mouse"
+], function(dom, on, mouse){
 	// Once all modules in the dependency list have loaded, this
 	// function is called to define the demo/myModule module.
 	//
@@ -22,10 +24,14 @@ define([
 			oldText[id] = node.innerHTML;
 			node.innerHTML = text;
 		},
-		restoreText: function(inputId, outputId){
+
+		calculate: function(inputId, outputId, calculate) {
 			var inputNode = dom.byId(inputId);
-            var outputNode = dom.byId(outputId)
-			outputNode.innerHTML = inputNode.value * 2;
+			var outputNode = dom.byId(outputId);
+			var calculateNode = dom.byId(calculate);
+			on(calculateNode, "click", function (evt) {
+				outputNode.innerHTML = inputNode.value * 2;
+			});
 		}
 	};
 });

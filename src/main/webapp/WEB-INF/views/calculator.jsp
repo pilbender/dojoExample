@@ -6,6 +6,7 @@
     <p>
         <input type="text" id="num1" >
         <div id="out1">nothing yet...</div>
+        <button id="calculate">Calculate</button>
     </p>
 
     <%--<script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js" data-dojo-config="async: true" ></script> --%>
@@ -27,10 +28,8 @@
             // Use our module to change the text in the greeting
             calculator.setText("out1", "nothing");
 
-            // After a few seconds, restore the text to its original state
-            setTimeout(function(){
-                calculator.restoreText("num1", "out1");
-            }, 3000);
+            // Module to change the value with the input
+            calculator.calculate("num1", "out1", "calculate");
         });
 
     </script>
