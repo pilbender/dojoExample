@@ -1,8 +1,3 @@
-<html>
-<head>
-    <title>Dojo Example</title>
-</head>
-<body>
     <p>
         Message from the controller:
         <div id="greeting">${message}</div>
@@ -59,5 +54,3 @@
                     });
         });
     </script>
-</body>
-</html>
