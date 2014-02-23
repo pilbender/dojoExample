@@ -12,4 +12,10 @@
 		<put-attribute name="body" value="/WEB-INF/views/home.jsp" />
 	</definition>
 
+	<!-- Commenting out this definition will cause the view resolver to fall through
+	directly to the JSP instead of this tiles definition. -->
+	<definition name="calculator" extends="defaultTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/calculator.jsp" />
+	</definition>
+
 </tiles-definitions>
