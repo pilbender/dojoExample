@@ -18,4 +18,8 @@
 		<put-attribute name="body" value="/WEB-INF/views/calculator.jsp" />
 	</definition>
 
+	<definition name="hello" extends="defaultTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/hello.jsp" />
+	</definition>
+
 </tiles-definitions>
