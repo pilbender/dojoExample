@@ -1,3 +1,4 @@
+// Singleton object
 define(function(){
 	var privateValue = 0;
 	return {

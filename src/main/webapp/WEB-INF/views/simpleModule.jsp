@@ -13,10 +13,22 @@
     require([
         "demo/simpleModule"
     ], function(counter){
+        console.debug("Begin First Module Usage");
+        console.debug(counter.getValue());
+        counter.increment();
         console.debug(counter.getValue());
         counter.increment();
         console.debug(counter.getValue());
         counter.decrement();
         console.debug(counter.getValue());
+        console.debug("End First Module Usage");
+    });
+
+    require(["demo/simpleModule"], function (counter) {
+        console.debug("Begin Second Module Usage");
+        console.debug(counter.getValue());
+        counter.increment();
+        console.debug(counter.getValue());
+        console.debug("End Second Module Usage");
     });
 </script>
