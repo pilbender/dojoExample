@@ -1,4 +1,5 @@
 <p>Simple Module</p>
+<p>This doesn't appear to do much, enable console debugging in your browser to see what is happening.</p>
 
 <script data-dojo-config="async: 1, dojoBlankHtmlUrl: '/blank.html',
         packages: [ {
