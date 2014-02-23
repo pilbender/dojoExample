@@ -19,8 +19,9 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "example-data", method = RequestMethod.GET)
-	public @ResponseBody Map<String, String> exampleJson() {
+	public @ResponseBody Map<String, String> exampleJson() throws InterruptedException {
 		Map<String, String> response = new TreeMap<String, String>();
+		Thread.sleep(2000);
 		response.put("status", "true");
 		return response;
 	}
