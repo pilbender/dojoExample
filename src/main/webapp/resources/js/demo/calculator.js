@@ -15,6 +15,8 @@ define([
 	// function; additional modules in the dependency list would be
 	// passed in as subsequent arguments.
 
+	// Private variable protected by a closure.  Only methods inside the closure can
+	// access it.
 	var oldText = {};
 
 	// This returned object becomes the defined value of this module
