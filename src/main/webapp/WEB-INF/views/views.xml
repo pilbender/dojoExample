@@ -26,4 +26,8 @@
 		<put-attribute name="body" value="/WEB-INF/views/animations.jsp" />
 	</definition>
 
+	<definition name="ajax" extends="defaultTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/ajax.jsp" />
+	</definition>
+
 </tiles-definitions>
