@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("animations")
 public class AnimationsController {
 	@RequestMapping(method = RequestMethod.GET)
-	public String calculatorPage(ModelMap model) {
+	public String animationsPage(ModelMap model) {
 		return "animations";
 	}
 }

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("hello")
 public class HelloController {
 	@RequestMapping(method = RequestMethod.GET)
-	public String calculatorPage(ModelMap model) {
+	public String helloPage(ModelMap model) {
 		model.addAttribute("message", "Page content");
 		return "hello";
 	}
