@@ -22,4 +22,8 @@
 		<put-attribute name="body" value="/WEB-INF/views/hello.jsp" />
 	</definition>
 
+	<definition name="animations" extends="defaultTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/animations.jsp" />
+	</definition>
+
 </tiles-definitions>
