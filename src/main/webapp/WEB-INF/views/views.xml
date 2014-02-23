@@ -38,4 +38,8 @@
 		<put-attribute name="body" value="/WEB-INF/views/query.jsp" />
 	</definition>
 
+	<definition name="simpleModule" extends="defaultTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/simpleModule.jsp" />
+	</definition>
+
 </tiles-definitions>
