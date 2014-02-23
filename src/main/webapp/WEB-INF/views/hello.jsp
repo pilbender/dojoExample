@@ -7,7 +7,8 @@
 <script>
     require([
         'dojo/dom',
-        'dojo/dom-construct'
+        'dojo/dom-construct',
+        'dojo/domReady!'
     ], function (dom, domConstruct) {
         var greetingNode = dom.byId('greeting');
         domConstruct.place('<i> Dojo!</i>', greetingNode);
