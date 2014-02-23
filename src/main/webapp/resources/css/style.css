@@ -3,3 +3,23 @@
 	color: black;
 	font-size: large;
 }
+
+.header {
+}
+
+.footer {
+}
+
+.wrapper {
+	display: flex;
+}
+
+.main-content {
+	padding: 10px;
+}
+
+.left-nav {
+	width: 200px;
+	padding: 10px;
+	border: 1px solid black;
+}

@@ -12,11 +12,21 @@
 
 <body>
 
-<tiles:insertAttribute name="header" ignore="true"/>
+<div class="header">
+    <tiles:insertAttribute name="header" ignore="true"/>
+</div>
 
-<tiles:insertAttribute name="body" ignore="true"/>
-
-<tiles:insertAttribute name="footer" ignore="true"/>
+<div class="wrapper">
+    <div class="left-nav">
+        <tiles:insertAttribute name="left-nav" ignore="true"/>
+    </div>
+    <div class="main-content">
+        <tiles:insertAttribute name="body" ignore="true"/>
+    </div>
+</div>
+<div class="footer">
+    <tiles:insertAttribute name="footer" ignore="true"/>
+</div>
 
 </body>
 </html>
