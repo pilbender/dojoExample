@@ -30,4 +30,12 @@
 		<put-attribute name="body" value="/WEB-INF/views/ajax.jsp" />
 	</definition>
 
+	<definition name="events" extends="defaultTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/events.jsp" />
+	</definition>
+
+	<definition name="query" extends="defaultTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/query.jsp" />
+	</definition>
+
 </tiles-definitions>
