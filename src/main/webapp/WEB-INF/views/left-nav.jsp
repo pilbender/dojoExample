@@ -5,4 +5,5 @@
 <a href="${pageContext.servletContext.contextPath}/animations">Animations</a><br/>
 <a href="${pageContext.servletContext.contextPath}/ajax">Ajax</a><br/>
 <a href="${pageContext.servletContext.contextPath}/simple-module">Simple Module</a><br/>
+<a href="${pageContext.servletContext.contextPath}/classes">Classes</a><br/>
 <a href="${pageContext.servletContext.contextPath}/calculator">Calculator</a><br/>
