@@ -1,5 +1,5 @@
 <p>Classes</p>
-<button dojo-type="mynamespace.Button"></button>
+<button id="log-it"></button>
 
 <script data-dojo-config="async: 1, dojoBlankHtmlUrl: '/blank.html',
         packages: [ {
@@ -23,6 +23,7 @@
             "dojo/dom",
             "dojo/domReady!"
     ], function(dom) {
+        var myButton = new mynamespace.Button();
     });
 
 </script>
