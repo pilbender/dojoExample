@@ -1,4 +1,5 @@
 <p>Classes</p>
+<button dojo-type="mynamespace.Button"></button>
 
 <script data-dojo-config="async: 1, dojoBlankHtmlUrl: '/blank.html',
         packages: [ {
@@ -14,6 +15,14 @@
         "demo/classes"
     ], function() {
 
+    });
+
+    // TODO: Fix this so it works (console.log) when you press the button and adds the label
+    require([
+            "demo/customButtonClass",
+            "dojo/dom",
+            "dojo/domReady!"
+    ], function(dom) {
     });
 
 </script>
