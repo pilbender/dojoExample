@@ -1,5 +1,6 @@
 <p>Classes</p>
 <button id="log-it">Log It!</button> - SubClass of dijit.form.Button, declaration not working.
+<p>Enable logging to see class scope output.</p>
 
 <script data-dojo-config="async: 1, dojoBlankHtmlUrl: '/blank.html',
         packages: [ {
@@ -26,18 +27,10 @@
         var myButton = new mynamespace.Button();
     });
 
-    /*define([
-        "dojo/_base/declare",
-        "dijit/form/Button"
-    ], function(declare, Button){
-        return declare("mynamespace.Button", Button, {
-            label: "My Button",
-            onClick: function(evt){
-                console.log("I was clicked!");
-                this.inherited(arguments);
-            }
-        });
+    require([
+        "demo/classScope"
+    ], function() {
+       // TODO: Added scoping output to the console log.
     });
-    var myButton = new mynamespace.Button();*/
 
 </script>
