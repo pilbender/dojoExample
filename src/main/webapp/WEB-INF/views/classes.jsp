@@ -1,5 +1,5 @@
 <p>Classes</p>
-<button id="log-it">Log It!</button>
+<button id="log-it">Log It!</button> - SubClass of dijit.form.Button, declaration not working.
 
 <script data-dojo-config="async: 1, dojoBlankHtmlUrl: '/blank.html',
         packages: [ {
