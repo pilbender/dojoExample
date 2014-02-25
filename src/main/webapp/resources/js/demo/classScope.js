@@ -1,40 +1,56 @@
 // Classes scope behavior
 
 require(["dojo/_base/declare"], function (declare) {
+	console.log("declare MyClass");
+	console.log("primitiveVal: 5");
+	console.log("objectVal: [1, 2, 3]");
 	var MyClass = declare(null, {
 		primitiveVal: 5,
 		objectVal: [1, 2, 3]
 	});
 
+	console.log("Create the obj1 and obj2 instances of MyClass");
 	var obj1 = new MyClass();
 	var obj2 = new MyClass();
 
 	// both return the same value from the prototype
-	obj1.primitiveVal === 5; // true
-	obj2.primitiveVal === 5; // true
+	console.log("Verify Values of each object");
+	console.log("obj1 primitive === 5"); // true
+	console.log(obj1.primitiveVal === 5); // true
+	console.log("obj2 primitive === 5"); // true
+	console.log(obj2.primitiveVal === 5); // true
 
-	// obj2 gets its own property (prototype remains unchanged)
-	obj2.primitiveVal = 10;
+	console.log("obj2 gets its own property (prototype remains unchanged");
+	console.log("obj2.primitiveVal = 10");
+	console.log(obj2.primitiveVal = 10);
 
-	// obj1 still gets its value from the prototype
-	obj1.primitiveVal === 5; // true
-	obj2.primitiveVal === 10; // true
+	console.log("obj1 still gets its value from the prototype");
+	console.log("obj1.primitiveVal === 5"); // true
+	console.log(obj1.primitiveVal === 5); // true
+	console.log("obj2.primitiveVal === 10"); // true
+	console.log(obj2.primitiveVal === 10); // true
 
-	// both point to the array on the prototype,
-	// neither instance has its own array at this point
-	obj1.objectVal === obj2.objectVal; // true
+	console.log("both point to the array on the prototype,");
+	console.log("neither instance has its own array at this point");
+	console.log("obj1.objectVal === obj2.objectVal"); // true
+	console.log(obj1.objectVal === obj2.objectVal); // true
 
-	// obj2 manipulates the prototype's array
-	obj2.objectVal.push(4);
-	// obj2's manipulation is reflected in obj1 since the array
-	// is shared by all instances from the prototype
-	obj1.objectVal.length === 4; // true
-	obj1.objectVal[3] === 4; // true
+	console.log("obj2 manipulates the prototype's array");
+	console.log("obj2.objectVal.push(4)");
+	console.log(obj2.objectVal.push(4));
+	console.log("obj2's manipulation is reflected in obj1 since the array");
+	console.log("is shared by all instances from the prototype");
+	console.log("obj1.objectVal.length === 4"); // true
+	console.log(obj1.objectVal.length === 4); // true
+	console.log("obj1.objectVal[3] === 4"); // true
+	console.log(obj1.objectVal[3] === 4); // true
 
-	// only assignment of the property itself (not manipulation of object
-	// properties) creates an instance-specific property
-	obj2.objectVal = [];
-	obj1.objectVal === obj2.objectVal; // false
+	console.log("only assignment of the property itself (not manipulation of object properties)");
+	console.log("creates an instance-specific property");
+	console.log("obj2.objectVal = []");
+	console.log(obj2.objectVal = []);
+	console.log("obj1.objectVal === obj2.objectVal"); // false
+	console.log(obj1.objectVal === obj2.objectVal); // false
 
 	// To avoid inadvertently sharing arrays or objects among all instances,
 	// object properties should be declared with null values and initialized
@@ -59,7 +75,7 @@ require(["dojo/_base/declare"], function (declare) {
 	// Define class A
 	var A = declare(null, {
 		myMethod: function () {
-			console.log("Hello!");
+			console.log("Stuff from class A");
 		}
 	});
 
@@ -68,17 +84,19 @@ require(["dojo/_base/declare"], function (declare) {
 		myMethod: function () {
 			// Call A's myMethod
 			this.inherited(arguments); // arguments provided to A's myMethod
-			console.log("World!");
+			console.log("Stuff from class B");
 		}
 	});
 
-	// Create an instance of B
+	console.log("Create an instance of B");
+	console.log("var myB = new B()");
 	var myB = new B();
+	console.log("myB.myMethod()");
 	myB.myMethod();
 
 
 	// Would output:
-	//      Hello!
-	//      World!
+	//      Stuff from class A
+	//      Stuff from class B
 
 });
