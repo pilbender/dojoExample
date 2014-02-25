@@ -17,13 +17,19 @@
 </div>
 
 <div class="wrapper">
-    <div class="left-nav">
-        <tiles:insertAttribute name="left-nav" ignore="true"/>
+    <div class="left-nav-wrapper">
+        <div class="left-nav">
+            <tiles:insertAttribute name="left-nav" ignore="true"/>
+        </div>
     </div>
-    <div class="main-content">
-        <tiles:insertAttribute name="body" ignore="true"/>
+    <div class="main-content-wrapper">
+        <div class="main-content">
+            <tiles:insertAttribute name="body" ignore="true"/>
+        </div>
     </div>
+    <div class="clear"></div>
 </div>
+
 <div class="footer">
     <tiles:insertAttribute name="footer" ignore="true"/>
 </div>

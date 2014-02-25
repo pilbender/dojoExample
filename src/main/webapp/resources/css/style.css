@@ -11,15 +11,27 @@
 }
 
 .wrapper {
-	display: flex;
+	/*display: flex;*/
+}
+
+.main-content-wrapper {
+	float: left;
+	width: 80%;
 }
 
 .main-content {
 	padding: 10px;
 }
 
+.left-nav-wrapper {
+	float: left;
+	width: 20%;
+}
 .left-nav {
-	width: 200px;
 	padding: 10px;
 	border: 1px solid black;
+}
+
+.clear {
+	clear: both;
 }
