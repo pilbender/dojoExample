@@ -1,5 +1,5 @@
 <p>Classes</p>
-<button id="log-it"></button>
+<button id="log-it">Log It!</button>
 
 <script data-dojo-config="async: 1, dojoBlankHtmlUrl: '/blank.html',
         packages: [ {
@@ -25,5 +25,19 @@
     ], function(dom) {
         var myButton = new mynamespace.Button();
     });
+
+    /*define([
+        "dojo/_base/declare",
+        "dijit/form/Button"
+    ], function(declare, Button){
+        return declare("mynamespace.Button", Button, {
+            label: "My Button",
+            onClick: function(evt){
+                console.log("I was clicked!");
+                this.inherited(arguments);
+            }
+        });
+    });
+    var myButton = new mynamespace.Button();*/
 
 </script>
