@@ -7,7 +7,9 @@
         <div id="ajaxGet">loading...</div>
     </p>
 
-
+    <p>
+        Events examples, coming soon...
+    </p>
 
     <%--<script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js" data-dojo-config="async: true" ></script> --%>
 
