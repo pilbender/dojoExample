@@ -11,7 +11,7 @@ public class QueryController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String queryPage(ModelMap model) {
 		model.addAttribute("message", "Page content");
-		return "home";
+		return "query";
 	}
 
 }

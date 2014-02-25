@@ -11,7 +11,7 @@ public class EventsController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String eventsPage(ModelMap model) {
 		model.addAttribute("message", "Page content");
-		return "home";
+		return "events";
 	}
 
 }
