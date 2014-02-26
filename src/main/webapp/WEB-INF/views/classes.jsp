@@ -23,7 +23,7 @@
             "demo/customButtonClass",
             "dojo/dom",
             "dojo/domReady!"
-    ], function(dom) {
+    ], function(MyButton, dom) {
         var myButton = new MyButton();
     });
 
