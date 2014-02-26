@@ -20,7 +20,7 @@ require(["dojo/_base/declare"], function (declare) {
 	console.log("obj2 primitive === 5"); // true
 	console.log(obj2.primitiveVal === 5); // true
 
-	console.log("obj2 gets its own property (prototype remains unchanged");
+	console.log("obj2 gets its own property (prototype remains unchanged)");
 	console.log("obj2.primitiveVal = 10");
 	console.log(obj2.primitiveVal = 10);
 
