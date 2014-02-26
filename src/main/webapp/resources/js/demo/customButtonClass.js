@@ -2,11 +2,12 @@
 
 require([
 	"dojo/_base/declare",
+	"dijit/_WidgetBase",
 	"dijit/form/Button",
 	"dojo/on", // Events
 	"dojo/mouse"
 ], function (declare, Button, on, dom) {
-	var MyButton = declare(digit.form.Button, {
+	var MyButton = declare(Button, {
 		constructor: function () {
 			label: "My Button",
 				on(dom.byId("log-it"), "click", function (evt) {
