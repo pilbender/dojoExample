@@ -24,13 +24,13 @@
             "dojo/dom",
             "dojo/domReady!"
     ], function(dom) {
-        var myButton = new mynamespace.Button();
+        var myButton = new MyButton();
     });
 
     require([
         "demo/classScope"
     ], function() {
-       // TODO: Added scoping output to the console log.
+       // Nothing, everything is in the classScope.js and executed there.
     });
 
 </script>
