@@ -3,10 +3,9 @@
 <p>Enable logging to see class scope output.</p>
 
 <script data-dojo-config="async: 1, dojoBlankHtmlUrl: '/blank.html',
-        packages: [ 'digit', 'dojox', 'util', {
+        packages: [ {
             name: 'demo',
             location: location.pathname.replace(/\/[^/]+$/, '') + '/resources/js/demo',
-
          } ]"
 <%-- This is the compressed version for speed --%>
         src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js"></script>
