@@ -1,5 +1,14 @@
 <p>Classes</p>
-<button id="log-it">Log It!</button> - SubClass of dijit.form.Button, declaration not working.
+<button data-dojo-type="dijit/form/Button" type="button">
+    <span>Click</span>
+    <script type="dojo/on" data-dojo-event="click" data-dojo-args="e">
+    console.log("I was clicked!", e);
+    this.set("label", "Clicked!");
+    </script>
+    <script type="dojo/watch" data-dojo-prop="label" data-dojo-args="prop, oldValue, newValue">
+    console.log("button: " + prop + " changed from '" + oldValue + "' to '" + newValue + "'");
+    </script>
+</button>
 <p>Enable logging to see class scope output.</p>
 
 <script data-dojo-config="async: 1, dojoBlankHtmlUrl: '/blank.html',
@@ -18,12 +27,14 @@
 
     });
 
-    // TODO: Fix this so it works (console.log) when you press the button and adds the label
     require([
             "demo/customButtonClass"
     ]), function (MyButton) {
-        var MyButton = new MyButton();
+        //var MyButton = new MyButton();
     }
+
+    // TODO: Fix this so it works (console.log) when you press the button and adds the label
+    // Hook a button after the dom loads via a class.
 
     require([
         "demo/classScope"

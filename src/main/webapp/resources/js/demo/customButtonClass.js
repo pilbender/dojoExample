@@ -1,5 +1,9 @@
 // Custom button Class which inherits from dijit/form/Button
 
+require(["dojo/parser", "dojo/domReady!"], function(parser){
+	parser.parse();
+});
+
 require([
 	"dojo/_base/declare",
 	"dijit/_WidgetBase",
