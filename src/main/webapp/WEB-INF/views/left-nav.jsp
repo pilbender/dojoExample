@@ -7,3 +7,5 @@
 <a href="${pageContext.servletContext.contextPath}/simple-module">Simple Module</a><br/>
 <a href="${pageContext.servletContext.contextPath}/classes">Classes</a><br/>
 <a href="${pageContext.servletContext.contextPath}/calculator">Calculator</a><br/>
+<a href="${pageContext.servletContext.contextPath}/image-zoomer">Image Zoomer</a><br/>
+<a href="${pageContext.servletContext.contextPath}/tables">Tables</a><br/>
