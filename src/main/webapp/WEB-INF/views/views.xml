@@ -51,4 +51,8 @@
 		<put-attribute name="body" value="/WEB-INF/views/image-zoomer.jsp" />
 	</definition>
 
+	<definition name="tables" extends="defaultTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/tables.jsp" />
+	</definition>
+
 </tiles-definitions>
