@@ -1,5 +1,5 @@
 <p>Classes</p>
-<button data-dojo-type="dijit/form/Button" type="button">
+<button data-dojo-type="dijit/form/Button" type="button" class="tundra" >
     <span>Click</span>
     <script type="dojo/on" data-dojo-event="click" data-dojo-args="e">
     console.log("I was clicked!", e);
