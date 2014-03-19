@@ -18,7 +18,8 @@
         fx.slideTo({
             node: greeting,
             top: 100,
-            left: 200
+            left: 400,
+            duration: 2000
         }).play();
     });
 </script>
