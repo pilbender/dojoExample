@@ -13,11 +13,15 @@
         @import "http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/resources/dojo.css";
         @import "http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojox/grid/resources/Grid.css";
         @import "http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojox/grid/resources/tundraGrid.css";
+        /*Grid needs an explicit height by default*/
+        #grid {
+            height: 20em;
+        }
     </style>
     <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/css/style.css" />
 </head>
 
-<body>
+<body class="tundra">
 
 <div class="header">
     <tiles:insertAttribute name="header" ignore="true"/>
