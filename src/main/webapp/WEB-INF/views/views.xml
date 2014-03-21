@@ -55,4 +55,8 @@
 		<put-attribute name="body" value="/WEB-INF/views/tables.jsp" />
 	</definition>
 
+	<definition name="filtering-select" extends="defaultTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/filtering-select.jsp" />
+	</definition>
+
 </tiles-definitions>
