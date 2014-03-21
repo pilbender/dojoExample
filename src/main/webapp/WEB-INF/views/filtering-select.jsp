@@ -17,7 +17,7 @@
 <%--src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js.uncompressed.js"></script>--%>
 
 <script type="text/javascript" >
-var states = [
+var stateDtos = [
 {name:"Alabama", state:"AL"},
 {name:"Alaska", state:"AK"},
 {name:"American Samoa", state:"AS"},
@@ -276,7 +276,7 @@ var cities =  [
 { name:"St. Louis", state:"MO" },
 { name:"St. Paul", state:"MN" },
 { name:"St. Petersburg", state:"FL" },
-{ name:"State College", state:"PA" },
+{ name:"StateDto College", state:"PA" },
 { name:"Sun Valley", state:"ID" },
 { name:"Syracuse", state:"NY" },
 { name:"Tacoma", state:"WA" },
@@ -326,7 +326,7 @@ dijit.byId('state').set('value', this.item ? this.item.state : null);
 
 new dijit.form.FilteringSelect({
 id: "state",
-store: new Memory({ idProperty: "state", data: states }),
+store: new Memory({ idProperty: "state", data: stateDtos }),
 autoComplete: true,
 style: "width: 150px;",
 onChange: function(state){
