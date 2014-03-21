@@ -1,14 +1,5 @@
     <p>
-        Message from the controller:
-        <div id="greeting">${message}</div>
-    </p>
-    <p>
-        AJAX Message
-        <div id="ajaxGet">loading...</div>
-    </p>
-
-    <p>
-        Events examples, coming soon...
+        Hook up anthing with Dojo Connect!!
     </p>
 
     <%--<script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js" data-dojo-config="async: true" ></script> --%>
