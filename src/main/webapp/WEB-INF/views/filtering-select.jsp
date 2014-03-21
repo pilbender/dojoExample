@@ -17,6 +17,7 @@
 <%--src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js.uncompressed.js"></script>--%>
 
 <script type="text/javascript" >
+<%-- TODO: Call the JSON service instead of setting the variable explicitly --%>
 var stateDtos = [
 {name:"Alabama", state:"AL"},
 {name:"Alaska", state:"AK"},
