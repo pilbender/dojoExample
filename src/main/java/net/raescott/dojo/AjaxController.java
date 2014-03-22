@@ -15,7 +15,7 @@ public class AjaxController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String homePage(ModelMap model) {
 		model.addAttribute("message", "Page content");
-		return "home";
+		return "ajax";
 	}
 
 	@RequestMapping(value = "example-data", method = RequestMethod.GET)
