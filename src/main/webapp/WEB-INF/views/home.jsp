@@ -1,18 +1,23 @@
+
+<div data-dojo-type="dijit/layout/TabContainer" class="tabbedContainer">
+<div data-dojo-type="dijit/layout/ContentPane">
     <p>
         Message from the controller:
         <div id="greeting">${message}</div>
     </p>
+</div>
+<div data-dojo-type="dijit/layout/ContentPane">
     <p>
         AJAX Message
         <div id="ajaxGet">loading...</div>
     </p>
-
-
+</div>
+</div>
 
     <%--<script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js" data-dojo-config="async: true" ></script> --%>
 
     <!-- blank.html is not yet defined in this application -->
-    <script data-dojo-config="async: 1, dojoBlankHtmlUrl: '/blank.html',
+    <script data-dojo-config="async: 1, dojoBlankHtmlUrl: '/blank.html', parseOnLoad: false,
         packages: [ {
             name: 'demo',
             location: location.pathname.replace(/\/[^/]+$/, '') + '/resources/js/demo'
@@ -52,5 +57,13 @@
                         // Display the error returned
                         resultDiv.innerHTML = error;
                     });
+        });
+    </script>
+    <script>
+        require(["dojo/dom", "dojo/parser", "dojo/domReady!"],
+                function(dom, parser) {
+            //var cp = new ContentPane();
+            //var content = dom.byId("myContentPane");
+            parser.parse();
         });
     </script>
