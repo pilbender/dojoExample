@@ -9,6 +9,7 @@
     </title>
     <style type="text/css">
         @import "http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dijit/themes/tundra/tundra.css";
+        @import "http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dijit/themes/soria/soria.css";
         @import "http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dijit/themes/dijit.css";
         @import "http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/resources/dojo.css";
         @import "http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojox/grid/resources/Grid.css";
