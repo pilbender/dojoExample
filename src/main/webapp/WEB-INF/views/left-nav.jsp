@@ -10,3 +10,4 @@
 <a href="${pageContext.servletContext.contextPath}/image-zoomer">Image Zoomer</a><br/>
 <a href="${pageContext.servletContext.contextPath}/tables">Tables</a><br/>
 <a href="${pageContext.servletContext.contextPath}/filtering-select">Filtering Select</a><br/>
+<a href="${pageContext.servletContext.contextPath}/mobile">Mobile</a><br/>
