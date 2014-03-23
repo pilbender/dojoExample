@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("calculator")
-public class CalulatorController {
+public class CalculatorController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String calculatorPage(ModelMap model) {
 		model.addAttribute("message", "Page content");

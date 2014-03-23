@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("classes")
 public class ClassesController {
 	@RequestMapping(method = RequestMethod.GET)
-	public String ClassesPage(ModelMap model) {
+	public String classesPage(ModelMap model) {
 		return "classes";
 	}
 
