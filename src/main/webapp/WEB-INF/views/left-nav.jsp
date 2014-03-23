@@ -10,4 +10,10 @@
 <a href="${pageContext.servletContext.contextPath}/image-zoomer">Image Zoomer</a><br/>
 <a href="${pageContext.servletContext.contextPath}/tables">Tables</a><br/>
 <a href="${pageContext.servletContext.contextPath}/filtering-select">Filtering Select</a><br/>
-<a href="${pageContext.servletContext.contextPath}/mobile">Mobile</a><br/>
+<a href="${pageContext.servletContext.contextPath}/mobile">Mobile Automatic Detection</a><br/>
+<a href="${pageContext.servletContext.contextPath}/mobile?theme=Android">Android Mobile</a><br/>
+<a href="${pageContext.servletContext.contextPath}/mobile?theme=Holodark">Holodark Mobile</a><br/>
+<a href="${pageContext.servletContext.contextPath}/mobile?theme=BlackBerry">Blackberry Mobile</a><br/>
+<a href="${pageContext.servletContext.contextPath}/mobile?theme=Custom">Custom Mobile</a><br/>
+<a href="${pageContext.servletContext.contextPath}/mobile?theme=iPhone">iPhone Mobile</a><br/>
+<a href="${pageContext.servletContext.contextPath}/mobile?theme=iPad">iPad Mobile</a><br/>
