@@ -1,20 +1,20 @@
 
-<%--
-<div data-dojo-type="dijit/layout/TabContainer" class="tabbedContainer">
-<div data-dojo-type="dijit/layout/ContentPane">
---%>
+<div data-dojo-type="dijit/layout/TabContainer" class="tabbedContainer" >
+<div data-dojo-type="dijit/layout/ContentPane" title="Simple Dojo">
 
+<%--
 <div id="tabContainer"></div>
 <div id="contentPane1">
+--%>
     <p>
         Message from the controller:
         <div id="greeting">${message}</div>
     </p>
 </div>
-<%--
-<div data-dojo-type="dijit/layout/ContentPane">
---%>
- <div id="contentPane2">
+<div data-dojo-type="dijit/layout/ContentPane" title="Simple Ajax" >
+    <%--
+     <div id="contentPane2">
+    --%>
     <p>
         AJAX Message
         <div id="ajaxGet">loading...</div>
@@ -43,7 +43,7 @@
                 tabContainer.addChild(contentpane2);
                 tabContainer.startup();
 
-                //parser.parse();
+                parser.parse();
             });
 </script>
 <script>
