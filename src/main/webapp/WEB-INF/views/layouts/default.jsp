@@ -19,8 +19,8 @@
             height: 20em;
         }
         /* TabContainer requires an explicit height by default */
-        #tabbedContainer {
-            height: 200em;
+        .tabbedContainer {
+            height: 20em;
         }
     </style>
     <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/css/style.css" />

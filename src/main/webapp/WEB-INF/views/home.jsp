@@ -1,17 +1,24 @@
 
+<%--
 <div data-dojo-type="dijit/layout/TabContainer" class="tabbedContainer">
 <div data-dojo-type="dijit/layout/ContentPane">
+--%>
+
+<div id="tabContainer"></div>
+<div id="contentPane1">
     <p>
         Message from the controller:
         <div id="greeting">${message}</div>
     </p>
 </div>
+<%--
 <div data-dojo-type="dijit/layout/ContentPane">
+--%>
+ <div id="contentPane2">
     <p>
         AJAX Message
         <div id="ajaxGet">loading...</div>
     </p>
-</div>
 </div>
 
     <%--<script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js" data-dojo-config="async: true" ></script> --%>
@@ -26,7 +33,20 @@
             src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js"></script>
             <%-- This is the uncompressed version for debugging --%>
             <%--src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js.uncompressed.js"></script>--%>
-    <script>
+<script>
+    require(["dojo/dom", "dojo/parser", "dijit", "dijit/layout/TabContainer", "dijit/layout/ContentPane", "dojo/domReady!"],
+            function(dom, parser, dijit, TabContainer, ContentPane) {
+                var tabContainer = new TabContainer({style: "height: 20em;"}, "tabContainer");
+                var contentpane1 = new ContentPane({title: "Simple Dojo", content: dom.byId("contentPane1")});
+                tabContainer.addChild(contentpane1);
+                var contentpane2 = new ContentPane({title: "Simple Ajax", content: dom.byId("contentPane2")});
+                tabContainer.addChild(contentpane2);
+                tabContainer.startup();
+
+                //parser.parse();
+            });
+</script>
+<script>
         // Require the module we just created
         require(["demo/myModule"], function(myModule){
             // Use our module to change the text in the greeting
@@ -59,11 +79,4 @@
                     });
         });
     </script>
-    <script>
-        require(["dojo/dom", "dojo/parser", "dojo/domReady!"],
-                function(dom, parser) {
-            //var cp = new ContentPane();
-            //var content = dom.byId("myContentPane");
-            parser.parse();
-        });
-    </script>
+
