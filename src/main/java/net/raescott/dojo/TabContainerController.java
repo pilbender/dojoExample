@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("query")
-public class QueryController {
+@RequestMapping("tab-container")
+public class TabContainerController {
 	@RequestMapping(method = RequestMethod.GET)
-	public String queryPage(ModelMap model) {
+	public String tabContainerPage(ModelMap model) {
 		model.addAttribute("message", "Page content");
-		return "query";
+		return "tab-container";
 	}
 
 }

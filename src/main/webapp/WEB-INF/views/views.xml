@@ -13,6 +13,10 @@
 		<put-attribute name="body" value="/WEB-INF/views/home.jsp" />
 	</definition>
 
+	<definition name="tab-container" extends="defaultTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/tab-container.jsp" />
+	</definition>
+
 	<!-- Commenting out this definition will cause the view resolver to fall through
 	directly to the JSP instead of this tiles definition. -->
 	<definition name="calculator" extends="defaultTemplate">
@@ -36,7 +40,7 @@
 	</definition>
 
 	<definition name="query" extends="defaultTemplate">
-		<put-attribute name="body" value="/WEB-INF/views/query.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/home.jsp" />
 	</definition>
 
 	<definition name="simpleModule" extends="defaultTemplate">
