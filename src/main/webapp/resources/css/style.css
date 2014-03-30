@@ -35,6 +35,11 @@
 	border: 1px solid black;
 }
 
+/* Gray out links we want to skip in a one hour presentation */
+.left-nav .skip-me {
+	background-color: lightgray;
+}
+
 .clear {
 	clear: both;
 }
