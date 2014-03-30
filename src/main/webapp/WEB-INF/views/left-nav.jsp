@@ -12,8 +12,8 @@
 <a href="${pageContext.servletContext.contextPath}/filtering-select">Filtering Select</a><br/>
 <a href="${pageContext.servletContext.contextPath}/mobile">Mobile Automatic Detection</a><br/>
 <a href="${pageContext.servletContext.contextPath}/mobile?theme=Android">Android Mobile</a><br/>
-<a href="${pageContext.servletContext.contextPath}/mobile?theme=Holodark">Holodark Mobile</a><br/>
-<a href="${pageContext.servletContext.contextPath}/mobile?theme=BlackBerry">Blackberry Mobile</a><br/>
-<a href="${pageContext.servletContext.contextPath}/mobile?theme=Custom">Custom Mobile</a><br/>
+<a href="${pageContext.servletContext.contextPath}/mobile?theme=Holodark" class="skip-me">Holodark Mobile</a><br/>
+<a href="${pageContext.servletContext.contextPath}/mobile?theme=BlackBerry" class="skip-me">Blackberry Mobile</a><br/>
+<a href="${pageContext.servletContext.contextPath}/mobile?theme=Custom" class="skip-me">Custom Mobile</a><br/>
 <a href="${pageContext.servletContext.contextPath}/mobile?theme=iPhone">iPhone Mobile</a><br/>
 <a href="${pageContext.servletContext.contextPath}/mobile?theme=iPad">iPad Mobile</a><br/>
