@@ -3,15 +3,6 @@
 
     <div id="greeting">${message}</div>
 </p>
-<p>
-    AJAX Message
-
-    <div id="ajaxGet">loading...</div>
-</p>
-
-<p>
-    Events examples, coming soon...
-</p>
 
     <%--<script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js" data-dojo-config="async: true" ></script> --%>
 
@@ -38,23 +29,4 @@
     });
 
 </script>
-<script>
-    require(["dojo/dom", "dojo/request", "dojo/json",
-        "dojo/_base/array", "dojo/domReady!"], function (dom, request, JSON, arrayUtil) {
-        // Put the response in the DOM
-        var resultDiv = dom.byId("ajaxGet");
 
-        // Request the JSON data from the server
-        request.get("example-data", {
-            // Parse data from JSON to a JavaScript object
-            handleAs: "json"
-        }).then(function (data) {
-                    // Display the data sent from the server
-                    resultDiv.innerHTML = data.status;
-                },
-                function (error) {
-                    // Display the error returned
-                    resultDiv.innerHTML = error;
-                });
-    });
-</script>
