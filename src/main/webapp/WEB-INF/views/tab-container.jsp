@@ -66,7 +66,7 @@
         var resultDiv = dom.byId("ajaxGet");
 
         // Request the JSON data from the server
-        request.get("example-data", {
+        request.get("tab-container/example-data", {
             // Parse data from JSON to a JavaScript object
             handleAs: "json"
         }).then(function (data) {
