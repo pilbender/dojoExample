@@ -18,14 +18,14 @@
     <!-- a rounded rectangle list container -->
     <ul data-dojo-type="dojox/mobile/RoundRectList">
         <!-- list item with an icon containing a switch -->
-        <li data-dojo-type="dojox/mobile/ListItem" data-dojo-props="icon:'images/icon-1.png'">Airplane Mode
+        <li data-dojo-type="dojox/mobile/ListItem" data-dojo-props="icon:'${pageContext.servletContext.contextPath}/resources/images/icon-1.png'">Airplane Mode
             <!-- the switch -->
             <div data-dojo-type="dojox/mobile/Switch"></div>
         </li>
         <!-- list item with an icon that slides this view away and then loads another page -->
-        <li data-dojo-type="dojox/mobile/ListItem" data-dojo-props="icon:'images/icon-2.png', rightText:'mac'">Wi-Fi</li>
+        <li data-dojo-type="dojox/mobile/ListItem" data-dojo-props="icon:'${pageContext.servletContext.contextPath}/resources/images/icon-2.png', rightText:'mac'">Wi-Fi</li>
         <!-- list item with an icon that slides to a view called "general" -->
-        <li data-dojo-type="dojox/mobile/ListItem" data-dojo-props="icon:'images/icon-3.png', rightText:'AcmePhone', moveTo:'general'">Carrier</li>
+        <li data-dojo-type="dojox/mobile/ListItem" data-dojo-props="icon:'${pageContext.servletContext.contextPath}/resources/images/icon-3.png', rightText:'AcmePhone', moveTo:'general'">Carrier</li>
     </ul>
 </div>
 
