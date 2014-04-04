@@ -43,3 +43,28 @@
 .clear {
 	clear: both;
 }
+
+/* Rotate Pane */
+.rotator {
+	background-color:#fff;
+	border:solid 1px #e5e5e5;
+	width:400px;
+	height:180px;
+	overflow:hidden;
+}
+.pane {
+	background-color:#fff;
+	width:400px;
+	height:180px;
+	overflow:hidden;
+	padding: 10px;
+}
+.pane0 {
+	background-color:#fff79e;
+}
+.pane1 {
+	background-color:#ffd4a0;
+}
+.pane2 {
+	background-color:#ffa0a0;
+}
