@@ -1,7 +1,7 @@
 <a href="${pageContext.servletContext.contextPath}/">Home</a><br/>
 <a href="${pageContext.servletContext.contextPath}/hello">Hello</a><br/>
 <a href="${pageContext.servletContext.contextPath}/tab-container">Tab Container</a><br/>
-<a href="${pageContext.servletContext.contextPath}/events" class="skip-me">Events</a><br/>
+<a href="${pageContext.servletContext.contextPath}/events">Events</a><br/>
 <a href="${pageContext.servletContext.contextPath}/animations">Animations</a><br/>
 <a href="${pageContext.servletContext.contextPath}/ajax" class="skip-me">Ajax</a><br/>
 <a href="${pageContext.servletContext.contextPath}/simple-module">Simple Module</a><br/>
