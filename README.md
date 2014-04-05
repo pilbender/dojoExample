@@ -8,7 +8,9 @@ About
 
 Example code to illustrate how to use Dojo to create rich user interfaces.
 
-How to:
+How to
+=======
+
  * Run Dojo with Tomcat, Spring MVC, and Apache Tiles
  * Load Dojo properly and leverage AMD (Asynchronous Module Definition)
  * Encapsulate code and avoid namespacing issues inherent in most Javascript code
