@@ -63,4 +63,8 @@
 		<put-attribute name="body" value="/WEB-INF/views/filtering-select.jsp" />
 	</definition>
 
+	<definition name="form-validation" extends="defaultTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/form-validation.jsp" />
+	</definition>
+
 </tiles-definitions>

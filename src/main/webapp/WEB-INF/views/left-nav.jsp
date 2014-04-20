@@ -10,6 +10,7 @@
 <a href="${pageContext.servletContext.contextPath}/image-zoomer" class="skip-me">Image Zoomer</a><br/>
 <a href="${pageContext.servletContext.contextPath}/tables">Tables</a><br/>
 <a href="${pageContext.servletContext.contextPath}/filtering-select">Filtering Select</a><br/>
+<a href="${pageContext.servletContext.contextPath}/form-validation">Form Validation</a><br/>
 <a href="${pageContext.servletContext.contextPath}/mobile">Mobile Automatic Detection</a><br/>
 <a href="${pageContext.servletContext.contextPath}/mobile?theme=Android">Android Mobile</a><br/>
 <a href="${pageContext.servletContext.contextPath}/mobile?theme=Holodark" class="skip-me">Holodark Mobile</a><br/>
