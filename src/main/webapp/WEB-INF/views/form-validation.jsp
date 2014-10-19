@@ -64,6 +64,15 @@
                 "dojo/domReady!"],
             function (dom, arrayUtil, baseEvent, query, validate) {
 
+				/* This doCheck() function makes the call to the Dojo validate function which works by feeding it
+				 * the form and the profile.  The profile has the validation rules that are built into Dojo.  The profile
+				 * makes it easy to fire off a lot of checks and it is where the validation happens.  doCheck() uses
+				 * the information from the validdate.check() to get information about the validation.  The rest is logic
+				 * to display it to the user.
+				 *
+				 * The last thing is the form submit event firing.  When the form submit happens, it's hijacked and the
+				 * validation chain fires.
+				 */
                 function doCheck(form) {
                     var results = validate.check(form, profile),
                             r = dom.byId("result");
