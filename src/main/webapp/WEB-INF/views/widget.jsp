@@ -1,7 +1,15 @@
+	<hr />
+	<p>First let's show an example of a non-widget version...</p>
     <p>
-        Person Data
+        <h3>Person Data</h3>
         <div id="personData">loading...</div>
     </p>
+	<hr />
+	<p>Same thing but created as a widget...</p>
+	<p>
+		<h3>Person Data</h3>
+		<div id="personDataWidget">loading...</div>
+	</p>
 
     <%--<script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js" data-dojo-config="async: true" ></script> --%>
 
