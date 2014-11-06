@@ -18,3 +18,4 @@
 <a href="${pageContext.servletContext.contextPath}/mobile?theme=Custom" class="skip-me">Custom Mobile</a><br/>
 <a href="${pageContext.servletContext.contextPath}/mobile?theme=iPhone">iPhone Mobile</a><br/>
 <a href="${pageContext.servletContext.contextPath}/mobile?theme=iPad">iPad Mobile</a><br/>
+<a href="${pageContext.servletContext.contextPath}/widget" class="skip-me">Widget</a><br/>

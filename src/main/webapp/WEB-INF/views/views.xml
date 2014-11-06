@@ -67,4 +67,8 @@
 		<put-attribute name="body" value="/WEB-INF/views/form-validation.jsp" />
 	</definition>
 
+	<definition name="widget" extends="defaultTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/widget.jsp" />
+	</definition>
+
 </tiles-definitions>
