@@ -18,11 +18,13 @@ public class WidgetController {
 		return "widget";
 	}
 
-	@RequestMapping(value = "example-data", method = RequestMethod.GET)
+	@RequestMapping(value = "person-data", method = RequestMethod.GET)
 	public @ResponseBody Map<String, String> exampleJson() throws InterruptedException {
 		Map<String, String> response = new TreeMap<String, String>();
 		Thread.sleep(2000);
-		response.put("status", "true");
+		response.put("name", "Scott Smith");
+		response.put("age", "5");
+		response.put("state", "Arizona");
 		return response;
 	}
 

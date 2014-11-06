@@ -1,6 +1,6 @@
     <p>
-        AJAX Message
-        <div id="ajaxGet">loading...</div>
+        Person Data
+        <div id="personData">loading...</div>
     </p>
 
     <%--<script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js" data-dojo-config="async: true" ></script> --%>
@@ -19,15 +19,15 @@
         require(["dojo/dom", "dojo/request", "dojo/json",
             "dojo/_base/array", "dojo/domReady!"], function(dom, request, JSON, arrayUtil){
             // Put the response in the DOM
-            var resultDiv = dom.byId("ajaxGet");
+            var resultDiv = dom.byId("personData");
 
             // Request the JSON data from the server
-            request.get("widget/example-data", {
+            request.get("widget/person-data", {
                 // Parse data from JSON to a JavaScript object
                 handleAs: "json"
             }).then(function(data){
                         // Display the data sent from the server
-                        resultDiv.innerHTML = data.status;
+                        resultDiv.innerHTML = "Name:" + data.name + "<br />" + "Age:" + data.age + "<br />" + "State:" + data.state;
                     },
                     function(error){
                         // Display the error returned
