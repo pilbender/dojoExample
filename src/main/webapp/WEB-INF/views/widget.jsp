@@ -9,6 +9,11 @@
 	<p>
 		<h3>Person Data</h3>
 		<div id="personDataWidget">loading...</div>
+
+		Widget Declaritive
+		<%--<div data-dojo-id="personStore" data-dojo-type="dojo/store/JsonRest"
+			 data-dojo-props="target: '/widget/person-data'"></div>
+		<div data-dojo-type="PersonWidget/PersonWidget" data-dojo-props="store:personStore, type:'PersonWidget/PersonWidget', page:0, pageSize:7"></div>--%>
 	</p>
 
     <%--<script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js" data-dojo-config="async: true" ></script> --%>
@@ -18,6 +23,10 @@
         packages: [ {
             name: 'demo',
             location: location.pathname.replace(/\/[^/]+$/, '') + '/resources/js/demo'
+            },
+            {
+            name: 'PersonWidget',
+            location: location.pathname.replace(/\/[^/]+$/, '') + '/resources/js/PersonWidget'
         } ]"
             <%-- This is the compressed version for speed --%>
             src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js"></script>
@@ -42,4 +51,12 @@
                         resultDiv.innerHTML = error;
                     });
         });
+
+		// Person Widget
+		require(["dojo/dom",
+			"PersonWidget/PersonWidget",
+			"dojo/parser",
+			"dojo/domReady!"], function(dom, PersonWidget, parser) {
+			//parser.parse();
+		});
     </script>
