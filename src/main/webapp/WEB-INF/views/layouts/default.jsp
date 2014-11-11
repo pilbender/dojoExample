@@ -24,6 +24,9 @@
         }
     </style>
     <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/css/style.css" />
+    <%--<meta content="text/html"/>--%>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Cache-control" content="public, max-age=1800" />
 </head>
 
 <body class="tundra">
