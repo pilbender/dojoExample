@@ -6,7 +6,7 @@
     <title>Your Application Name</title>
     <!-- stylesheet will go here -->
     <script type="text/javascript"
-            src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojox/mobile/deviceTheme.js"></script>
+            src="//ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojox/mobile/deviceTheme.js"></script>
 
 </head>
 <!-- ensure that the page is only displayed when all mobile widgets are rendered. -->
@@ -55,7 +55,7 @@
 </div>
 
 <!-- dojo/javascript will go here -->
-<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js"
+<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojo/dojo.js"
         data-dojo-config="async: true"></script>
 <!-- application will go here -->
 <script type="text/javascript">

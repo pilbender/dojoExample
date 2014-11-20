@@ -6,7 +6,7 @@
 <button onclick="dojo.publish('myAutoRotator1/rotator/control', ['go', 2]);">Go 3</button>
 <button onclick="dojo.publish('myAutoRotator1/rotator/control', ['next']);">Next</button>
 
-    <%--<script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js" data-dojo-config="async: true" ></script> --%>
+    <%--<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojo/dojo.js" data-dojo-config="async: true" ></script> --%>
 
     <!-- blank.html is not yet defined in this application -->
 <script data-dojo-config="async: 1, dojoBlankHtmlUrl: '/blank.html', parseOnLoad: false,
@@ -15,9 +15,9 @@
             location: location.pathname.replace(/\/[^/]+$/, '') + '/resources/js/demo'
         } ]"
 <%-- This is the compressed version for speed --%>
-        src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js"></script>
+        src="//ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojo/dojo.js"></script>
             <%-- This is the uncompressed version for debugging --%>
-            <%--src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js.uncompressed.js"></script>--%>
+            <%--src="//ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojo/dojo.js.uncompressed.js"></script>--%>
 <script>
     require(["dojo/dom", "dojox/widget/AutoRotator", "dojox/widget/rotator/Pan",
         "dojo/domReady!"], function (dom, AutoRotator, Pan) {

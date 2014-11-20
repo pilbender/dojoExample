@@ -16,7 +16,7 @@
 		<div data-dojo-type="PersonWidget/PersonWidget" data-dojo-props="store:personStore, type:'PersonWidget/PersonWidget', page:0, pageSize:7"></div>--%>
 	</p>
 
-    <%--<script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js" data-dojo-config="async: true" ></script> --%>
+    <%--<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojo/dojo.js" data-dojo-config="async: true" ></script> --%>
 
     <!-- blank.html is not yet defined in this application -->
     <script data-dojo-config="async: 1, dojoBlankHtmlUrl: '/blank.html',
@@ -29,9 +29,9 @@
             location: location.pathname.replace(/\/[^/]+$/, '') + '/resources/js/PersonWidget'
         } ]"
             <%-- This is the compressed version for speed --%>
-            src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js"></script>
+            src="//ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojo/dojo.js"></script>
             <%-- This is the uncompressed version for debugging --%>
-            <%--src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js.uncompressed.js"></script>--%>
+            <%--src="//ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojo/dojo.js.uncompressed.js"></script>--%>
     <script>
         require(["dojo/dom", "dojo/request", "dojo/json",
             "dojo/_base/array", "dojo/domReady!"], function(dom, request, JSON, arrayUtil){
