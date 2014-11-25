@@ -8,7 +8,8 @@
 	<p>Same thing but created as a widget...</p>
 	<p>
 		<h3>Person Data</h3>
-		<div id="personDataWidget">loading...</div>
+		<div data-dojo-id="personDataWidget" data-dojo-type="dojo/store/JsonRest"
+                data-dojo-props="target: '/dojoExample/widget/person-data">loading...</div>
 
 		Widget Declaritive
 		<%--<div data-dojo-id="personStore" data-dojo-type="dojo/store/JsonRest"
@@ -55,8 +56,6 @@
 		// Person Widget
 		require(["dojo/dom",
 			"PersonWidget/PersonWidget",
-			"dojo/parser",
-			"dojo/domReady!"], function(dom, PersonWidget, parser) {
-			//parser.parse();
+			"dojo/domReady!"], function(dom, PersonWidget) {
 		});
     </script>

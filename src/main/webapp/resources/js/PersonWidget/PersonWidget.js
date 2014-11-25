@@ -5,37 +5,43 @@
 
 define([
 	"dojo/_base/declare",
+	"dojo/dom-construct",
+	"dojo/dom",
 	"dijit/_WidgetBase",
 	"dijit/_TemplatedMixin",
-	"dijit/_WidgetsInTemplateMixin",
-	"dojo/text!./templates/PersonWidget.html"],
-	function (declare, _WidgetBase, _TemplateMixin, _WidgetsInTemplateMixin, template) {
-		return declare("PersonWidget/PersonWidget", [_WidgetBase, _TemplateMixin, _WidgetsInTemplateMixin], {
-			templateString: template,
-			widgetsInTemplate: true,
-			imageBaseUrl: './templates/icon-2.png'
+	"dojo/text!./templates/PersonWidget.html",
+	"dojo/domReady!"],
+	function (declare, domConstruct, dom, _WidgetBase, _TemplatedMixin, template) {
+		return declare("PersonWidget.PersonWidget", [_WidgetBase, _TemplatedMixin], {
 
-			/*// Some default values for our author
-			// These typically map to whatever you're handing into the constructor
-			name: "No Name",
-			// Using dojo.moduleUrl, we can get a path to our AuthorWidget's space
-			// and we want to have a default avatar, just in case
-			avatar: dojo.moduleUrl("custom.AuthorWidget", "images/defaultAvatar.png"),
-			bio: "",
+			templateString: dojo.cache("PersonWidget", "templates/PersonWidget.html"),
+			store: undefined,
+			type: undefined,
+			query: "person-data",
+			imageBaseUrl: './templates/icon-2.png',
+			sort: undefined,
 
-			// Our template - important!
-			templateString:
-				dojo.cache("custom.AuthorWidget", "templates/AuthorWidget.html"),
+			create: function() {
+				this.inherited(arguments);
+			},
 
-			// A class to be applied to the root node in our template
-			baseClass: "authorWidget",
+			update: function() {
+				if(this.type) {
+					require([this.type], dojo.hitch(this, function(type) {
+						domConstruct.empty(this.contentNode);
 
-			// A reference to our background animation
-			mouseAnim: null,
+						if(this.store) {
+							var results = this.store.query(this.query);
+							results.forEach(dojo.hitch(this, function(result, i) {
+								var div = domConstruct.create("div", null, this.contentNode);
+								new type({json:result}).placeAt(div);
+							}));
+						}
+					}));
+				}
+			}
 
-			// Colors for our background animation
-			baseBackgroundColor: "#fff",
-			mouseBackgroundColor: "#def"*/
 		});
 	}
 );
+
