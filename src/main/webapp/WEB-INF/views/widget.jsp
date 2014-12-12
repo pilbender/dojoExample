@@ -5,7 +5,14 @@
         <div id="personData">loading...</div>
     </p>
 	<hr />
-	<p>Same thing but created as a widget...</p>
+    <p>Simplist possible widget from _WidgetBase.  This would be a behavior only widget.  See the console debug to verify
+    the widget was instantiated.</p>
+    <span data-dojo-type="SimpleWidget">Simple Widget</span>
+    <hr />
+    <p>Simplist possible widget that creates its own DOM tree.  The DOM id is hard coded in the widget.</p>
+    <div id="domTreeWidget">loading...</div>
+    <hr />
+	<p>Same as the first thing but created as a custom widget...</p>
 	<p>
 		<h3>Person Data</h3>
 		<div data-dojo-id="personDataWidget" data-dojo-type="dojo/store/JsonRest"
@@ -17,8 +24,7 @@
 		<div data-dojo-type="PersonWidget/PersonWidget" data-dojo-props="store:personStore, type:'PersonWidget/PersonWidget', page:0, pageSize:7"></div>--%>
 	</p>
 
-    <%--<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojo/dojo.js" data-dojo-config="async: true" ></script> --%>
-
+    <!-- First, bring in the Dojo toolkit -->
     <!-- blank.html is not yet defined in this application -->
     <script data-dojo-config="async: 1, dojoBlankHtmlUrl: '/blank.html',
         packages: [ {
@@ -33,7 +39,9 @@
             src="//ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojo/dojo.js"></script>
             <%-- This is the uncompressed version for debugging --%>
             <%--src="//ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojo/dojo.js.uncompressed.js"></script>--%>
+
     <script>
+        // This populates in the DOM in the traditional, way by manipulating the DOM after making an AJAX call.
         require(["dojo/dom", "dojo/request", "dojo/json",
             "dojo/_base/array", "dojo/domReady!"], function(dom, request, JSON, arrayUtil){
             // Put the response in the DOM
@@ -53,11 +61,45 @@
                     });
         });
 
-		// Person Widget
-		require(["dojo/dom",
-            "dojo/parser",
-			"PersonWidget/PersonWidget",
-			"dojo/domReady!"], function(dom, parser, PersonWidget) {
-            parser.parse();
-		});
+		// Simplist possible widget which uses _WidgetBase
+        require([
+            "dojo/_base/declare", "dojo/parser", "dojo/ready",
+            "dijit/_WidgetBase",
+        ], function(declare, parser, ready, _WidgetBase){
+
+            declare("SimpleWidget", [_WidgetBase], {
+                // put methods, attributes, etc. here
+            });
+            ready(function(){
+                // Call the parser manually so it runs after our widget is defined, and page has finished loading
+                parser.parse();
+                console.debug("done parsing");
+            });
+        });
+
+        // Simplist widget which creates its own DOM tree
+        // the parser is only needed, if you want
+        // to instantiate the widget declaratively (in markup)
+        require([
+            "dojo/_base/declare", "dojo/dom-construct", "dojo/ready", "dojo/dom",
+            "dijit/_WidgetBase",
+        ], function(declare, domConstruct, ready, dom, _WidgetBase){
+
+            declare("DomTreeWidget", [_WidgetBase], {
+                buildRendering: function(){
+                    // create the DOM for this widget
+                    this.domNode = domConstruct.create("button", {innerHTML: "push me"});
+                }
+            });
+
+            ready(function(){
+                // Create the widget programmatically and place in DOM
+                var domTreeWidgetId = dom.byId("domTreeWidget");
+                (new DomTreeWidget()).placeAt(domTreeWidgetId);
+            });
+        });
+
+
+        // Person Widget
+
     </script>
