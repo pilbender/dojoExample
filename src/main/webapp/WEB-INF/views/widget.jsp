@@ -12,6 +12,9 @@
     <p>Simplist possible widget that creates its own DOM tree.  The DOM id is hard coded in the widget.</p>
     <div id="domTreeWidget">loading...</div>
     <hr />
+    <p>Simple widget created with a templated mixin.</p>
+    <div data-dojo-type="FancyCounter" data-dojo-props="label:'counter label'">button label</div>
+    <hr />
 	<p>Same as the first thing but created as a custom widget...</p>
 	<p>
 		<h3>Person Data</h3>
@@ -99,6 +102,31 @@
             });
         });
 
+        // Same example with an HTML template.  This uses a templated mixin.
+        require([
+            "dojo/_base/declare", "dojo/parser", "dojo/ready",
+            "dijit/_WidgetBase", "dijit/_TemplatedMixin"
+        ], function(declare, parser, ready, _WidgetBase, _TemplatedMixin){
+
+            declare("FancyCounter", [_WidgetBase, _TemplatedMixin], {
+                // counter
+                _i: 0,
+
+                templateString: "<div>" +
+                "<button data-dojo-attach-event='onclick: increment'>press me</button>" +
+                "&nbsp; count: <span data-dojo-attach-point='counter'>0</span>" +
+                "</div>",
+
+                increment: function(){
+                    this.counter.innerHTML = ++this._i;
+                }
+            });
+
+            ready(function(){
+                // Call the parser manually so it runs after our widget is defined, and page has finished loading
+                parser.parse();
+            });
+        });
 
         // Person Widget
 
