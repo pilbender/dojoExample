@@ -39,8 +39,8 @@
 		<put-attribute name="body" value="/WEB-INF/views/events.jsp" />
 	</definition>
 
-	<definition name="query" extends="defaultTemplate">
-		<put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+	<definition name="dom" extends="defaultTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/dom.jsp" />
 	</definition>
 
 	<definition name="simpleModule" extends="defaultTemplate">
