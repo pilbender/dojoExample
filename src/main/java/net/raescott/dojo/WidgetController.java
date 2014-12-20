@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("widget")
 public class WidgetController {
 	@RequestMapping(method = RequestMethod.GET)
-	public String homePage(ModelMap model) {
+	public String widgetPage(ModelMap model) {
 		model.addAttribute("message", "Page content");
 		return "widget";
 	}
