@@ -5,6 +5,7 @@
 <a href="${pageContext.servletContext.contextPath}/animations">Animations</a><br/>
 <a href="${pageContext.servletContext.contextPath}/ajax" class="skip-me">Ajax</a><br/>
 <a href="${pageContext.servletContext.contextPath}/dom" class="skip-me">Dom</a><br/>
+<a href="${pageContext.servletContext.contextPath}/hitch" class="skip-me">Hitch</a><br/>
 <a href="${pageContext.servletContext.contextPath}/simple-module">Simple Module</a><br/>
 <a href="${pageContext.servletContext.contextPath}/classes">Classes</a><br/>
 <a href="${pageContext.servletContext.contextPath}/calculator" class="skip-me">Calculator</a><br/>

@@ -43,6 +43,10 @@
 		<put-attribute name="body" value="/WEB-INF/views/dom.jsp" />
 	</definition>
 
+	<definition name="hitch" extends="defaultTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/hitch.jsp" />
+	</definition>
+
 	<definition name="simpleModule" extends="defaultTemplate">
 		<put-attribute name="body" value="/WEB-INF/views/simpleModule.jsp" />
 	</definition>
