@@ -1,25 +1,27 @@
 <div>
     <div>
-    First Argument: <span id="num1">1</span>
+        First Argument: <span id="num1">1</span>
     </div>
     <div>
-    Second Argument: <span id="num2">2</span>
+        Second Argument: <span id="num2">2</span>
     </div>
 </div>
 <hr />
 <div>
+    <div>
+        First method fires everything in the Accumulator with hitch.  The button even handler (callback) use Dojo hitch
+        as well.
+    </div>
     <div>
         <button id="attempt1">Fire Event</button>
-        First, we illustrate incorrect usage:
-    </div>
-    <div>
-    First attempt: <span id="result1"></span>
+        First attempt: <span id="result1"></span>
     </div>
 </div>
 <hr />
 <div>
     <div>
-    Now, we illustrate correct usage:
+        Second one fires everything except the button event handler (callback) without hitch.  The button still must use
+        Dojo hitch.
     </div>
     <div>
         <button id="attempt2">Fire Event</button>
@@ -106,6 +108,7 @@
         //on(attempt1, "click", hitchMeUp1(arg1, arg2)); // This causes it to just fire, instead of firing on click!
         on(attempt1, "click", lang.hitch(this, hitchMeUp1, arg1, arg2));
 
+        // Define another simple function, similar to the above without hitch
         var hitchMeUp2 = function (arg1, arg2) {
             theAccumulator.clear();
             theAccumulator.add(arg1);
