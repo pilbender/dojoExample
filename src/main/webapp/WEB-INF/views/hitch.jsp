@@ -102,20 +102,20 @@
             result1.innerHTML = total1;
         };
 
-        on(attempt1, "click", hitchMeUp1(arg1, arg2));
+        on(attempt1, "click", lang.hitch(this, hitchMeUp1, arg1, arg2));
 
-        function hitchMeUp2 (arg1, arg2) {
+        var hitchMeUp2 = function (arg1, arg2) {
             theAccumulator.clear();
             theAccumulator.add(arg1);
             theAccumulator.add(arg2);
-            var total2 = theAccumulator.getResult2();
+            var total2 = theAccumulator.getResult2(arg1, arg2);
             console.debug("hitchMeUp2 arg1: " + arg1);
             console.debug("hitchMeUp2 arg2: " + arg2);
             console.debug("hitchMeUp2 total2: " + total2);
             result2.innerHTML = total2;
         };
 
-        on(attempt2, "click", hitchMeUp2(arg1, arg2));
+        on(attempt2, "click", lang.hitch(this, hitchMeUp2, arg1, arg2));
     });
 </script>
 <script>
@@ -126,7 +126,7 @@
         var result3 = dom.byId("result3");
         var attempt3 = dom.byId("attempt3");
 
-        var processEvent = function(e){
+        var processEvent = function(e) {
             this.result3.innerHTML = "Fail!";
         };
 
@@ -140,7 +140,7 @@
         var result4 = dom.byId("result4");
         var attempt4 = dom.byId("attempt4");
 
-        var processEvent = function(e){
+        var processEvent = function(e) {
             this.result4.innerHTML = "Success!";
         };
 
