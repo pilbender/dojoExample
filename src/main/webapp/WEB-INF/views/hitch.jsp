@@ -92,6 +92,7 @@
         // Define a simple function
         function hitchMeUp1 (arg1, arg2) {
             // Do some simple stuff on the accumulator
+            // What's interesting about this is the trailing parentheses. hitch returns a function!
             lang.hitch(theAccumulator, "clear")();
             lang.hitch(theAccumulator, "add", arg1)();
             lang.hitch(theAccumulator, "add", arg2)();
@@ -102,19 +103,22 @@
             result1.innerHTML = total1;
         };
 
+        //on(attempt1, "click", hitchMeUp1(arg1, arg2)); // This causes it to just fire, instead of firing on click!
         on(attempt1, "click", lang.hitch(this, hitchMeUp1, arg1, arg2));
 
         var hitchMeUp2 = function (arg1, arg2) {
             theAccumulator.clear();
             theAccumulator.add(arg1);
             theAccumulator.add(arg2);
-            var total2 = theAccumulator.getResult2(arg1, arg2);
+            var total2 = theAccumulator.getResult1();
+            //var total2 = theAccumulator.getResult2(arg1, arg2);
             console.debug("hitchMeUp2 arg1: " + arg1);
             console.debug("hitchMeUp2 arg2: " + arg2);
             console.debug("hitchMeUp2 total2: " + total2);
             result2.innerHTML = total2;
         };
 
+        //on(attempt2, "click", hitchMeUp2(arg1, arg2)); // This causes it to just fire, instead of firing on click!
         on(attempt2, "click", lang.hitch(this, hitchMeUp2, arg1, arg2));
     });
 </script>
