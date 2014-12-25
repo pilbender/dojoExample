@@ -9,7 +9,8 @@
 <hr />
 <div>
     <div>
-    First, we illustrate incorrect usage:
+        <button id="attempt1">Fire Event</button>
+        First, we illustrate incorrect usage:
     </div>
     <div>
     First attempt: <span id="result1"></span>
@@ -21,7 +22,8 @@
     Now, we illustrate correct usage:
     </div>
     <div>
-    Second attempt: <span id="result2"></span>
+        <button id="attempt2">Fire Event</button>
+        Second attempt: <span id="result2"></span>
     </div>
 </div>
 <hr />
@@ -59,11 +61,12 @@
 <%-- This is the uncompressed version for debugging --%>
 <%--src="//ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojo/dojo.js.uncompressed.js"></script>--%>
 <script>
-    require(["dojo/dom", "dojo/_base/lang",
-        "dojo/domReady!"], function (dom, lang) {
-        var arg1 = dom.byId("num1");
-        var arg2 = dom.byId("num2");
+    require(["dojo/dom", "dojo/_base/lang", "dojo/on", "dojo/number",
+        "dojo/domReady!"], function (dom, lang, on, number) {
+        var arg1 = number.parse(dom.byId("num1").innerHTML);
+        var arg2 = number.parse(dom.byId("num2").innerHTML);
         var result1 = dom.byId("result1");
+        var result2 = dom.byId("result2");
 
         // Simple object with some methods
         var theAccumulator = {
@@ -72,29 +75,47 @@
                 this.total = 0;
             },
             add: function (x) {
+                console.debug("theAccumulator add x: " + x);
                 this.total += x;
+                console.debug("theAccumulator add total: " + this.total);
             },
-            getResult: function () {
+            getResult1: function () {
+                console.debug("theAccumulator getResult1 total: " + this.total);
+                return this.total;
+            },
+            getResult2: function (arg1, arg2) {
+                this.total = arg1 + arg2;
                 return this.total;
             }
         };
 
-        // Do some simple stuff on the accumulator
-        theAccumulator.clear();
-        theAccumulator.add(arg1);
-        theAccumulator.add(arg2);
-        console.debug(theAccumulator.getResult());
-
         // Define a simple function
-        var hitchMeUp =  lang.hitch(theAccumulator, function printResult() {
+        function hitchMeUp1 (arg1, arg2) {
+            // Do some simple stuff on the accumulator
+            lang.hitch(theAccumulator, "clear")();
+            lang.hitch(theAccumulator, "add", arg1)();
+            lang.hitch(theAccumulator, "add", arg2)();
+            var total1 = lang.hitch(theAccumulator, "getResult1")();
+            console.debug("hitchMeUp1 arg1: " + arg1);
+            console.debug("hitchMeUp1 arg2: " + arg2);
+            console.debug("hitchMeUp1 total1: " + total1);
+            result1.innerHTML = total1;
+        };
+
+        on(attempt1, "click", hitchMeUp1(arg1, arg2));
+
+        function hitchMeUp2 (arg1, arg2) {
             theAccumulator.clear();
             theAccumulator.add(arg1);
             theAccumulator.add(arg2);
-            var result = theAccumulator.getResult();
-            console.debug(result);
-            result1.innerHTML = result;
-        });
-        hitchMeUp();
+            var total2 = theAccumulator.getResult2();
+            console.debug("hitchMeUp2 arg1: " + arg1);
+            console.debug("hitchMeUp2 arg2: " + arg2);
+            console.debug("hitchMeUp2 total2: " + total2);
+            result2.innerHTML = total2;
+        };
+
+        on(attempt2, "click", hitchMeUp2(arg1, arg2));
     });
 </script>
 <script>
