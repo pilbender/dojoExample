@@ -9,8 +9,9 @@
 <hr />
 <div>
     <div>
-        First method fires everything in the Accumulator with hitch.  The button even handler (callback) use Dojo hitch
-        as well.
+        First method fires everything in the Accumulator with hitch.  As we'll see in the next example it is not completely
+        necessary to use hitch to fire things in the Accumulator. The button event handler (callback) uses Dojo hitch
+        because it must.  Try changing the code to not use it.
     </div>
     <div>
         <button id="attempt1">Fire Event</button>
@@ -20,8 +21,8 @@
 <hr />
 <div>
     <div>
-        Second one fires everything except the button event handler (callback) without hitch.  The button still must use
-        Dojo hitch.
+        Second method fires everything except the button event handler (callback) without hitch.  The button still must use
+        Dojo hitch.  Try changing the code to not use it.
     </div>
     <div>
         <button id="attempt2">Fire Event</button>
@@ -42,7 +43,7 @@
 <hr />
 <div>
     <div>
-        And now we'll do the same exmaple but we'll bind a different context to the execution with hitch.
+        And now we'll do the same example again but we'll bind a different context to the execution (button click) with hitch.
     </div>
     <div>
         <button id="attempt4">Fire Event</button>
@@ -92,6 +93,7 @@
         };
 
         // Define a simple function
+        // TODO: Should hitchMeUp1 and hitchMeUp2 be in a closure inside of "on"?
         function hitchMeUp1 (arg1, arg2) {
             // Do some simple stuff on the accumulator
             // What's interesting about this is the trailing parentheses. hitch returns a function!
@@ -126,7 +128,7 @@
     });
 </script>
 <script>
-    // TODO: What about these closures and name spacing?  Why can't we reuse the variable names?
+    // TODO: What about these closures and name spacing?  Why can't we reuse the variable names?  What's wrong with this code in general?
     require(["dojo/dom", "dojo/_base/lang", "dojo/on",
         "dojo/domReady!"], function (dom, lang, on) {
 
@@ -138,6 +140,7 @@
         };
 
         on(attempt3, "click", processEvent);
+        //console.debug("Value of this: " + this);
     });
 </script>
 <script>
@@ -152,6 +155,7 @@
         };
 
         on(attempt4, "click", lang.hitch(this, processEvent));
+        //console.debug("Value of this: " + this);
     });
 </script>
 
