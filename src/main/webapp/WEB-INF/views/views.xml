@@ -47,6 +47,10 @@
 		<put-attribute name="body" value="/WEB-INF/views/hitch.jsp" />
 	</definition>
 
+	<definition name="mixin" extends="defaultTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/mixin.jsp" />
+	</definition>
+
 	<definition name="simpleModule" extends="defaultTemplate">
 		<put-attribute name="body" value="/WEB-INF/views/simpleModule.jsp" />
 	</definition>
