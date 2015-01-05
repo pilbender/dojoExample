@@ -16,16 +16,15 @@
     <div data-dojo-type="FancyCounter" data-dojo-props="label:'counter label'">button label</div>
     <hr />
 	<p>Same as the first thing but created as a custom widget...</p>
-	<p>
-		<h3>Person Data</h3>
-		<div data-dojo-id="personDataWidget" data-dojo-type="dojo/store/JsonRest"
-                data-dojo-props="target: '/dojoExample/widget/person-data'">loading...</div>
+    <p>Programatic Example</p>
+	<h3>Person Data</h3>
+    <div id="personWidget">loading...</div>
 
-		Widget Declaritive
-		<%--<div data-dojo-id="personStore" data-dojo-type="dojo/store/JsonRest"
-			 data-dojo-props="target: '/widget/person-data'"></div>
-		<div data-dojo-type="PersonWidget/PersonWidget" data-dojo-props="store:personStore, type:'PersonWidget/PersonWidget', page:0, pageSize:7"></div>--%>
-	</p>
+    <hr />
+    <p>Declaritive Widget Example</p>
+	<%--<div data-dojo-id="personStore" data-dojo-type="dojo/store/JsonRest"
+		data-dojo-props="target: '/widget/person-data'"></div>
+	<div data-dojo-type="PersonWidget/PersonWidget" data-dojo-props="store:personStore, type:'PersonWidget/PersonWidget', page:0, pageSize:7"></div>--%>
 
     <!-- First, bring in the Dojo toolkit -->
     <!-- blank.html is not yet defined in this application -->
@@ -63,7 +62,9 @@
                         resultDiv.innerHTML = error;
                     });
         });
+    </script>
 
+    <script>
 		// Simplist possible widget which uses _WidgetBase
         require([
             "dojo/_base/declare", "dojo/parser", "dojo/ready",
@@ -79,7 +80,9 @@
                 console.debug("done parsing");
             });
         });
+    </script>
 
+    <script>
         // Simplist widget which creates its own DOM tree
         // the parser is only needed, if you want
         // to instantiate the widget declaratively (in markup)
@@ -101,7 +104,9 @@
                 (new DomTreeWidget()).placeAt(domTreeWidgetId);
             });
         });
+    </script>
 
+    <script>
         // Same example with an HTML template.  This uses a templated mixin.
         require([
             "dojo/_base/declare", "dojo/parser", "dojo/ready",
@@ -128,7 +133,22 @@
                 //parser.parse();
             });
         });
+    </script>
 
+    <script>
         // Person Widget
+        require(["dojo/request", "dojo/dom", "dojo/_base/array", "PersonWidget/PersonWidget", "dojo/domReady!"],
+                function(request, dom, arrayUtil, PersonWidget){
+                    // Load up our authors
+                    request("widget/person-data", {
+                        handleAs: "json"
+                    }).then(function(dummyData){
+                        // Get a reference to our container
+                        var personContainer = dom.byId("personWidget");
+                        //personContainer.innerHTML = "Illustrating that you can grab data and put it in the attach point manually, like this: " + dummyData.name;
 
+                        // Create our widget and place it
+                        var widget = new PersonWidget(dummyData).placeAt(personContainer);
+                    });
+                });
     </script>
