@@ -124,7 +124,8 @@
 
             ready(function(){
                 // Call the parser manually so it runs after our widget is defined, and page has finished loading
-                parser.parse();
+                // Can't call the parser twice on this page.
+                //parser.parse();
             });
         });
 
