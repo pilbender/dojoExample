@@ -9,10 +9,12 @@ define([
 	"dijit/_TemplatedMixin",
 	"dojo/text!./templates/PersonWidget.html"
 ], function(declare, _WidgetBase, _TemplatedMixin, template){
-	return declare([_WidgetBase, _TemplatedMixin], {
+	return declare("PersonWidget.PersonWidget", [_WidgetBase, _TemplatedMixin], {
 		// Some default values for our author
 		// These typically map to whatever you're passing to the constructor
 		name: "No Name",
+		age: "No Age",
+		state: "No State",
 
 		// Our template - important!
 		templateString: template,

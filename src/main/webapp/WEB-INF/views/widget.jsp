@@ -22,9 +22,7 @@
 
     <hr />
     <p>Declaritive Widget Example</p>
-	<%--<div data-dojo-id="personStore" data-dojo-type="dojo/store/JsonRest"
-		data-dojo-props="target: '/widget/person-data'"></div>
-	<div data-dojo-type="PersonWidget/PersonWidget" data-dojo-props="store:personStore, type:'PersonWidget/PersonWidget', page:0, pageSize:7"></div>--%>
+    <%--<div data-dojo-type="PersonWidget">loading...</div>--%>
 
     <!-- First, bring in the Dojo toolkit -->
     <!-- blank.html is not yet defined in this application -->
@@ -76,7 +74,7 @@
             });
             ready(function(){
                 // Call the parser manually so it runs after our widget is defined, and page has finished loading
-                parser.parse();
+                //parser.parse();
                 console.debug("done parsing");
             });
         });
@@ -137,12 +135,12 @@
 
     <script>
         // Person Widget
-        require(["dojo/request", "dojo/dom", "dojo/_base/array", "PersonWidget/PersonWidget", "dojo/domReady!"],
-                function(request, dom, arrayUtil, PersonWidget){
+        require(["dojo/request", "dojo/dom", "dojo/parser", "PersonWidget/PersonWidget", "dojo/ready","dojo/domReady!"],
+                function (request, dom, parser, PersonWidget, ready) {
                     // Load up our authors
                     request("widget/person-data", {
                         handleAs: "json"
-                    }).then(function(dummyData){
+                    }).then(function (dummyData) {
                         // Get a reference to our container
                         var personContainer = dom.byId("personWidget");
                         //personContainer.innerHTML = "Illustrating that you can grab data and put it in the attach point manually, like this: " + dummyData.name;
@@ -150,5 +148,10 @@
                         // Create our widget and place it
                         var widget = new PersonWidget(dummyData).placeAt(personContainer);
                     });
+
+                    // Make sure this is last in the page.
+                    ready (function() {
+                        parser.parse();
+                    })
                 });
     </script>
