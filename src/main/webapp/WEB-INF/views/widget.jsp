@@ -22,7 +22,7 @@
 
     <hr />
     <p>Declaritive Widget Example</p>
-    <%--<div data-dojo-type="PersonWidget">loading...</div>--%>
+    <div data-dojo-type="PersonWidget">loading...</div>
 
     <!-- First, bring in the Dojo toolkit -->
     <!-- blank.html is not yet defined in this application -->
@@ -137,7 +137,7 @@
         // Person Widget
         require(["dojo/request", "dojo/dom", "dojo/parser", "PersonWidget/PersonWidget", "dojo/ready","dojo/domReady!"],
                 function (request, dom, parser, PersonWidget, ready) {
-                    // Load up our authors
+                    // Load up the dummy json data
                     request("widget/person-data", {
                         handleAs: "json"
                     }).then(function (dummyData) {
@@ -146,10 +146,11 @@
                         //personContainer.innerHTML = "Illustrating that you can grab data and put it in the attach point manually, like this: " + dummyData.name;
 
                         // Create our widget and place it
+                        personContainer.innerHTML = "";  // TODO: Seems like there ought to be a better way to clear the dom.
                         var widget = new PersonWidget(dummyData).placeAt(personContainer);
                     });
 
-                    // Make sure this is last in the page.
+                    // Make sure this is last in the page to pick up any declarative widgets
                     ready (function() {
                         parser.parse();
                     })
