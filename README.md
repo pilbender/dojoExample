@@ -8,7 +8,7 @@ About
 
 Example code to illustrate how to use Dojo to create rich user interfaces. 
 
-This example project uses Dojo 1.9 techniques. Many examples are taken from the official Dojo documentation. Where that documentation or code is out of date, this project adapts it to more modern techniques.
+This example project uses Dojo 1.10 techniques. Many examples are taken from the official Dojo documentation. Where that documentation or code is out of date, this project adapts it to more modern techniques.
 
 How to
 =======
