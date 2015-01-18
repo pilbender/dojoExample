@@ -9,6 +9,7 @@ define([
 	"dijit/_TemplatedMixin",
 	"dojo/text!./templates/PersonWidget.html"
 ], function(declare, _WidgetBase, _TemplatedMixin, template){
+	// TODO: I do not yet understand why the return value is used in this case and not in others.
 	return declare("PersonWidget", [_WidgetBase, _TemplatedMixin], {
 		// Some default values for our author
 		// These typically map to whatever you're passing to the constructor
