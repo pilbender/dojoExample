@@ -148,6 +148,7 @@
                         // Create our widget and place it
                         personContainer.innerHTML = "";  // TODO: Seems like there ought to be a better way to clear the dom.
                         var widget = new PersonWidget(dummyData).placeAt(personContainer);
+                        widget.startup(); // TODO: Not needed here, but it is considered a best practice to have it.
                     });
 
                     // Make sure this is last in the page to pick up any declarative widgets
