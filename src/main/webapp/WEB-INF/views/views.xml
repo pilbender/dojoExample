@@ -13,6 +13,10 @@
 		<put-attribute name="body" value="/WEB-INF/views/home.jsp" />
 	</definition>
 
+	<definition name="define" extends="defaultTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/define.jsp" />
+	</definition>
+
 	<definition name="tab-container" extends="defaultTemplate">
 		<put-attribute name="body" value="/WEB-INF/views/tab-container.jsp" />
 	</definition>
