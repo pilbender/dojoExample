@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("define")
 public class DefineController {
 	@RequestMapping(method = RequestMethod.GET)
-	public String ajaxPage() {
+	public String definePage() {
 		return "define";
 	}
 }
