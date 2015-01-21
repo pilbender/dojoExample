@@ -1,4 +1,5 @@
 <a href="${pageContext.servletContext.contextPath}/">Home</a><br/>
+<a href="${pageContext.servletContext.contextPath}/lang" class="skip-me">Lang</a><br/>
 <a href="${pageContext.servletContext.contextPath}/define" class="skip-me">Define</a><br/>
 <a href="${pageContext.servletContext.contextPath}/hello">Hello</a><br/>
 <a href="${pageContext.servletContext.contextPath}/tab-container">Tab Container</a><br/>
