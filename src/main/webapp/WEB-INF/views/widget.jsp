@@ -22,7 +22,7 @@
 
     <hr />
     <p>Declaritive Widget Example</p>
-    <div data-dojo-type="PersonWidget">loading...</div>
+    <div data-dojo-type="PersonWidget" >loading...</div>
 
     <!-- First, bring in the Dojo toolkit -->
     <!-- blank.html is not yet defined in this application -->
@@ -138,6 +138,7 @@
         require(["dojo/request", "dojo/dom", "dojo/parser", "PersonWidget/PersonWidget", "dojo/ready","dojo/domReady!"],
                 function (request, dom, parser, PersonWidget, ready) {
                     // Load up the dummy json data
+					// TODO: Instead of just the dummyData with the implicit promise, use a StoreMixin
                     request("widget/person-data", {
                         handleAs: "json"
                     }).then(function (dummyData) {
