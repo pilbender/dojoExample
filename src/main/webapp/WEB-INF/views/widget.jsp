@@ -135,7 +135,7 @@
 
     <script>
         // Person Widget
-        require(["dojo/request", "dojo/dom", "dojo/parser", "PersonWidget/PersonWidget", "dojo/ready","dojo/domReady!"],
+        require(["dojo/request", "dojo/dom", "dojo/parser", "PersonWidget/PersonWidget", "dojo/ready", "dojo/domReady!"],
                 function (request, dom, parser, PersonWidget, ready) {
                     // Load up the dummy json data
 					// TODO: Instead of just the dummyData with the implicit promise, use a StoreMixin

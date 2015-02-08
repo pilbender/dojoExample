@@ -8,12 +8,13 @@ define([
 	"dojo/request",
 	"dojo/query",
 	"dojo/store/Memory",
+	"dojo/store/JsonRest",
 	"dojo/store/Observable",
 	"dojo/when",
 	"dijit/_WidgetBase",
 	"dijit/_TemplatedMixin",
 	"dojo/text!./templates/PersonWidget.html"
-], function(declare, request, query, Memory, Observable, when, _WidgetBase, _TemplatedMixin, template){
+], function(declare, request, query, Memory, JsonRest, Observable, when, _WidgetBase, _TemplatedMixin, template){
 	// TODO: I do not yet understand why the return value is used in this case and not in others.
 	return declare("PersonWidget", [_WidgetBase, _TemplatedMixin], {
 		// Some default values for our author
@@ -22,8 +23,7 @@ define([
 		age: "No Age",
 		state: "No State",
 
-		/*
-		store: null,
+		/*store: null,
 		_setStoreAttr: function (store) {
 			// notify of a property change
 			this._set('store', store);
@@ -45,8 +45,7 @@ define([
 		renderItem: function (item) {
 			// render an item
 			console.debug(JSON.stringify(item));
-		},
-		*/
+		},*/
 
 		// Accessors and Mutators
 		// TODO: These getters and setters can be deleted.  They are not being used right now.
@@ -61,34 +60,33 @@ define([
 		templateString: template,
 
 		// A class to be applied to the root node in our template
-		baseClass: "personWidget"
+		baseClass: "personWidget",
 
-		/*// TODO: This is starting to seem like a bad idea.  It can be completely deleted.
+		// TODO: This is starting to seem like a bad idea.  It can be completely deleted.
 		// Make the AJAX call to the service
 		postCreate: function () {
 			// Essential to keeping a reference to the _Widget predefined dom node.  Once we're in this closure, we
-			// can't get to it.
-			var domNode = this.domNode;
-			var name = domNode;
+			// can't get to it. Note, this doesn't seem to work as it should!
+			//var domNode = this.domNode;
+			//console.debug("domNode: " + JSON.stringify(domNode));
 
-			request("widget/person-data", {
+			/*request("widget/person-data", {
 				handleAs: "json"
 			}).then(function (dummyData) {
 				// Get a reference to our container
-				//var personContainer = dom.byId("personWidget");
-				//personContainer.innerHTML = "Illustrating that you can grab data and put it in the attach point manually, like this: " + dummyData.name;
+				var personContainer = dom.byId("personWidget");
 
 				// Create our widget and place it
-				console.debug("name: " + name);
-				console.debug("this.name: " + this.name);
-				console.debug("domNode: " + domNode.toString());
-				name.innerHTML = dummyData.name;
-				console.debug("name: " + name);
-				console.debug("this.name: " + this.name);
-				age.innerHTML = dummyData.age;
-				state.innerHTML = dummyData.state;
+			});*/
+
+			var store = new JsonRest({
+				target: "widget/person-data"
 			});
-		}*/
+
+			store.query().then(function(result) {
+				console.debug("Query happened on postCreate: " + JSON.stringify(result));
+			});
+		}
 	});
 });
 
