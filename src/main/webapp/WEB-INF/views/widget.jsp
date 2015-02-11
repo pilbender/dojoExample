@@ -22,7 +22,7 @@
 
     <hr />
     <p>Declaritive Widget Example</p>
-    <div data-dojo-type="PersonWidget" >loading...</div>
+    <div data-dojo-type="PersonWidget" data-dojo-props="target:'widget/person-data'" >loading...</div>
 
     <!-- First, bring in the Dojo toolkit -->
     <!-- blank.html is not yet defined in this application -->
@@ -135,26 +135,41 @@
 
     <script>
         // Person Widget
-        require(["dojo/request", "dojo/dom", "dojo/parser", "PersonWidget/PersonWidget", "dojo/ready", "dojo/domReady!"],
-                function (request, dom, parser, PersonWidget, ready) {
+        require(["dojo/request", "dojo/dom", "dojo/parser", "PersonWidget/PersonWidget", "dojo/ready", "dojo/promise/all", "dojo/domReady!"],
+                function (request, dom, parser, PersonWidget, ready, all) {
                     // Load up the dummy json data
 					// TODO: Instead of just the dummyData with the implicit promise, use a StoreMixin
+					/*
                     request("widget/person-data", {
                         handleAs: "json"
                     }).then(function (dummyData) {
                         // Get a reference to our container
-                        var personContainer = dom.byId("personWidget");
+                        //var personContainer = dom.byId("personWidget");
                         //personContainer.innerHTML = "Illustrating that you can grab data and put it in the attach point manually, like this: " + dummyData.name;
 
                         // Create our widget and place it
-                        personContainer.innerHTML = "";  // TODO: Seems like there ought to be a better way to clear the dom.
-                        var widget = new PersonWidget(dummyData).placeAt(personContainer);
+                        //personContainer.innerHTML = "";  // TODO: Seems like there ought to be a better way to clear the dom.
+                        //var widget = new PersonWidget(dummyData).placeAt(personContainer);
+						var widget = new PersonWidget(dummyData).placeAt("personWidget", "replace");
                         widget.startup(); // TODO: Not needed here, but it is considered a best practice to have it.
                     });
+                    */
+
+					var widget = new PersonWidget({target: "widget/person-data"}).placeAt("personWidget", "replace");
+					widget.startup(); // Remember widget children will automatically startup for you.  Declaritive startup on their own too.
+
+					/*
+					request("widget/person-list", {
+						handleAs: "json"
+					}).then().forEach(function(singleItem) {
+						// Add child to container div
+					});
+					*/
 
                     // Make sure this is last in the page to pick up any declarative widgets
                     ready (function() {
                         parser.parse();
+						//all(widgetContainer.widgets);  // Talk about how to now render before all deferreds return.
                     })
                 });
     </script>

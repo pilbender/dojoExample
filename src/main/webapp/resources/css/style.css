@@ -68,3 +68,7 @@
 .pane2 {
 	background-color:#ffa0a0;
 }
+
+.hidden {
+	display: none;
+}

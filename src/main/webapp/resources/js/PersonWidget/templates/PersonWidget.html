@@ -1,7 +1,8 @@
-<div>
+<div >
 	<!-- Remember, multiple root nodes, at the top level, are not allowed in a template! -->
 	I'm from the widget template :-)<br />
-	<span data-dojo-attach-point="nameNode">Name: ${name}</span><br />
-	<span data-dojo-attach-point="ageNode">Age: ${age}</span><br />
-	<span data-dojo-attach-point="stateNode">State: ${state}</span><br />
+	<!-- ${name} etc. is now redundant -->
+	Name: <span data-dojo-attach-point="nameNode" class="hidden">${name}</span><br />
+	Age: <span data-dojo-attach-point="ageNode" class="hidden">${age}</span><br />
+	State: <span data-dojo-attach-point="stateNode" class="hidden">${state}</span><br />
 </div>
