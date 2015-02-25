@@ -140,6 +140,32 @@
 		</dependency>
     </dependencies>
 
+	<!-- Choose the build script based on the operating system -->
+	<profile>
+		<id>dojo-windows</id>
+		<activation>
+			<os>
+				<family>Windows</family>
+			</os>
+		</activation>
+		<properties>
+			<dojo-script.prefix></dojo-script.prefix>
+			<dojo-script.extension>.bat</dojo-script.extension>
+		</properties>
+	</profile>
+	<profile>
+		<id>dojo-unix</id>
+		<activation>
+			<os>
+				<family>unix</family>
+			</os>
+		</activation>
+		<properties>
+			<dojo-script.prefix>./</dojo-script.prefix>
+			<dojo-script.extension>.sh</dojo-script.extension>
+		</properties>
+	</profile>
+
     <build>
         <finalName>dojoExample</finalName>
         <plugins>
@@ -191,6 +217,30 @@
 					<addContextWarDependencies>true</addContextWarDependencies>
 					-->
 				</configuration>
+			</plugin>
+			<!-- Begin Dojo Build Stuff -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.1.1</version>
+				<executions>
+					<!-- Dojo 1.10 execution -->
+					<execution>
+						<id>dojo-1.10-build</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>${dojo-script.prefix}build${dojo-script.extension}</executable>
+							<workingDirectory>${basedir}/src/main/webapp/dojo-release-1.10.2-src/util/buildscripts</workingDirectory>
+							<arguments>
+								<argument>--profile</argument>
+								<argument>profiles/fco.profile.js</argument>
+							</arguments>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
         </plugins>
     </build>

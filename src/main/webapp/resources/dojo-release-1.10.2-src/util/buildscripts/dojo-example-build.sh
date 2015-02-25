@@ -5,4 +5,4 @@
 
 # The Linux/Unix version of this file
 
-build.sh -p profiles/dojo-build.profile.js -r internStrings=false
+build.sh -p profiles/dojo-example.profile.js

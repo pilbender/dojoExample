@@ -4,4 +4,4 @@
 
 @rem The windows version of this file
 
-build.bat -p profiles/dojo-build.profile.js -r internStrings=false
+build.bat -p profiles/dojo-build.profile.js

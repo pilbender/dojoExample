@@ -1,40 +1,32 @@
-copyrightFile: "../../../documents/copyright.txt",
-	dependencies ={
+copyrightFile: '../../../documents/copyright.txt',
+	dependencies = {
+
+		action:'clean,release',
+		optimize:'closure',
+		layerOptimize:'closure',
+		cssOptimize: true,
+		releaseName:'dojo', // This name sucks and should be changed -scott smith
+		releaseDir:'../../../dojobuild',
+		mini:'true',
+		internStrings: 'true',
+		boot: true,
+		stripConsole: 'normal',
 
 		layers:  [
-			// OreillyCommonDojo Extension Layer
 			{
-				name: "../oDojo/OreillyCommonDojo.js",
-				copyrightFile: "../../../documents/copyright.txt",
-				dependencies: ["oDojo.OreillyCommonDojo"],
-				exclude: [ "fco/fco-layer-1_10" ]
+				name: 'dojo/demo',
+				exclude: [ 'dojo/demo/demo-layer' ], // Note, the prefix comes from releaseName! -scott smith
+				dependencies: ['dojo/demo/demo-layer']
 			},
-			// whole enchilada custom layer
-			{
-				name: "../fco/fco-layer-1_10.js",
-				/*layerDependencies:
-					[
-						"oDojo.OreillyCommonDojo"
-					],*/
-				copyrightFile: "../../../documents/copyright.txt",
-				dependencies: ["fco.fco-layer-1_10"]
-			}
 		],
 
 		prefixes: [
-			[ "dijit", "../dijit" ],
-			[ "dojox", "../dojox" ],
-			[ "oDojo", "../../js/OreillyCommonDojoExtensions/oDojo", "../../../documents/copyright.txt"],
-			[ "oDijit", "../../js/OreillyCommonDojoExtensions/oDijit", "../../../documents/copyright.txt"],
-			[ "oDojox", "../../js/OreillyCommonDojoExtensions/oDojox", "../../../documents/copyright.txt"],
-			/*[ "OreillyCommonDojoExtensions", "../../js/OreillyCommonDojoExtensions", "../../documents/copyright.txt"],*/
-			[ "fco", "../../js/fco", "../../../documents/copyright.txt" ],
-			[ "css", "../../css", "../../../documents/copyright.txt"],
-			[ "images", "../../images"],
-			[ "public/images", "../../public/images"]
-		],
+			[ 'dijit', '../dijit' ],
+			[ 'dojox', '../dojox' ],
+			[ 'demo', '../../../js/demo' ],
+			[ 'css', '../../../css' ],
+			[ 'images', '../../../images']
+		]
+	}
 
-		releaseDir:"../../../dojobuild-1.10"
-
-	};
 
