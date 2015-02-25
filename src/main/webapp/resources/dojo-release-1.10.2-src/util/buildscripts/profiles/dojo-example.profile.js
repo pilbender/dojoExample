@@ -14,16 +14,21 @@ copyrightFile: '../../../documents/copyright.txt',
 
 		layers:  [
 			{
-				name: 'dojo/demo',
-				exclude: [ 'dojo/demo/demo-layer' ], // Note, the prefix comes from releaseName! -scott smith
-				dependencies: ['dojo/demo/demo-layer']
+				name: 'dojo/demo/demo-layer.js',
+				/*exclude: [ 'dojo/demo/demo-layer' ],*/ // Note, the prefix comes from releaseName! -scott smith
+				dependencies: ['dojo/demo/demo-layer.js']
 			},
+			{
+				name: 'dojo/PersonWdiget/PersonWidget.js',
+				layerDependencies: [ 'dojo/demo/demo-layer.js' ]
+			}
 		],
 
 		prefixes: [
 			[ 'dijit', '../dijit' ],
 			[ 'dojox', '../dojox' ],
 			[ 'demo', '../../../js/demo' ],
+			[ 'PersonWidget', '../../../js/PersonWidget' ],
 			[ 'css', '../../../css' ],
 			[ 'images', '../../../images']
 		]
