@@ -19,8 +19,9 @@ copyrightFile: '../../../documents/copyright.txt',
 				dependencies: ['dojo/demo/demo-layer']
 			},
 			{
-				name: 'PersonWdiget/PersonWidget.js',
-				layerDependencies: [ 'dojo/demo/demo-layer.js' ]
+				name: 'PersonWidget/PersonWidget.js',
+				layerDependencies: [ 'dojo/demo/demo-layer.js' ],
+				dependencies: ['dojo/PersonWidget/PersonWidget']
 			}
 		],
 
