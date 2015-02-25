@@ -14,12 +14,12 @@ copyrightFile: '../../../documents/copyright.txt',
 
 		layers:  [
 			{
-				name: 'dojo/demo/demo-layer.js',
+				name: 'demo/demo-layer.js',
 				/*exclude: [ 'dojo/demo/demo-layer' ],*/ // Note, the prefix comes from releaseName! -scott smith
-				dependencies: ['dojo/demo/demo-layer.js']
+				dependencies: ['dojo/demo/demo-layer']
 			},
 			{
-				name: 'dojo/PersonWdiget/PersonWidget.js',
+				name: 'PersonWdiget/PersonWidget.js',
 				layerDependencies: [ 'dojo/demo/demo-layer.js' ]
 			}
 		],
