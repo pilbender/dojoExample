@@ -28,10 +28,10 @@ copyrightFile: '../../../documents/copyright.txt',
 		prefixes: [
 			[ 'dijit', '../dijit' ],
 			[ 'dojox', '../dojox' ],
-			[ 'demo', '../../../js/demo' ],
-			[ 'PersonWidget', '../../../js/PersonWidget' ],
-			[ 'css', '../../../css' ],
-			[ 'images', '../../../images']
+			[ 'demo', '../../../resources/js/demo' ],
+			[ 'PersonWidget', '../../../resources/js/PersonWidget' ],
+			[ 'css', '../../../resources/css' ],
+			[ 'images', '../../../resources/images']
 		]
 	}
 
