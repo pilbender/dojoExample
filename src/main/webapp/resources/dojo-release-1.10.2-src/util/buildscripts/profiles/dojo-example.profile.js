@@ -9,7 +9,7 @@ copyrightFile: '../../../documents/copyright.txt',
 		releaseDir:'../../../dojobuild',
 		mini:'true',
 		internStrings: 'true',
-		boot: true,
+		//boot: true,
 		stripConsole: 'normal',
 
 		layers:  [
