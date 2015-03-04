@@ -141,30 +141,32 @@
     </dependencies>
 
 	<!-- Choose the build script based on the operating system -->
-	<profile>
-		<id>dojo-windows</id>
-		<activation>
-			<os>
-				<family>Windows</family>
-			</os>
-		</activation>
-		<properties>
-			<dojo-script.prefix></dojo-script.prefix>
-			<dojo-script.extension>.bat</dojo-script.extension>
-		</properties>
-	</profile>
-	<profile>
-		<id>dojo-unix</id>
-		<activation>
-			<os>
-				<family>unix</family>
-			</os>
-		</activation>
-		<properties>
-			<dojo-script.prefix>./</dojo-script.prefix>
-			<dojo-script.extension>.sh</dojo-script.extension>
-		</properties>
-	</profile>
+	<profiles>
+		<profile>
+			<id>dojo-windows</id>
+			<activation>
+				<os>
+					<family>Windows</family>
+				</os>
+			</activation>
+			<properties>
+				<dojo-script.prefix></dojo-script.prefix>
+				<dojo-script.extension>.bat</dojo-script.extension>
+			</properties>
+		</profile>
+		<profile>
+			<id>dojo-unix</id>
+			<activation>
+				<os>
+					<family>unix</family>
+				</os>
+			</activation>
+			<properties>
+				<dojo-script.prefix>./</dojo-script.prefix>
+				<dojo-script.extension>.sh</dojo-script.extension>
+			</properties>
+		</profile>
+	</profiles>
 
     <build>
         <finalName>dojoExample</finalName>
@@ -233,10 +235,10 @@
 						</goals>
 						<configuration>
 							<executable>${dojo-script.prefix}build${dojo-script.extension}</executable>
-							<workingDirectory>${basedir}/src/main/webapp/dojo-release-1.10.2-src/util/buildscripts</workingDirectory>
+							<workingDirectory>${basedir}/src/main/webapp/resources/dojo-release-1.10.2-src/util/buildscripts</workingDirectory>
 							<arguments>
 								<argument>--profile</argument>
-								<argument>profiles/fco.profile.js</argument>
+								<argument>profiles/dojo-example.profile.js</argument>
 							</arguments>
 						</configuration>
 					</execution>
