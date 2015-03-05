@@ -25,3 +25,4 @@
 <a href="${pageContext.servletContext.contextPath}/mobile?theme=iPad">iPad Mobile</a><br/>
 <a href="${pageContext.servletContext.contextPath}/store" class="skip-me">Stores</a><br/>
 <a href="${pageContext.servletContext.contextPath}/widget" class="skip-me">Widget</a><br/>
+<a href="${pageContext.servletContext.contextPath}/widget/widget-layer" class="skip-me">Widget with Dojo Build Layers</a><br/>

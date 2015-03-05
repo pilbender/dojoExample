@@ -18,6 +18,12 @@ public class WidgetController {
 		return "widget";
 	}
 
+	@RequestMapping(value = "widget-layer", method = RequestMethod.GET)
+	public String widgetLayerPage(ModelMap model) {
+		model.addAttribute("message", "Page content");
+		return "widget-layer";
+	}
+
 	@RequestMapping(value = "person-data", method = RequestMethod.GET)
 	public @ResponseBody Map<String, String> exampleJson() throws InterruptedException {
 		Map<String, String> response = new TreeMap<String, String>();
